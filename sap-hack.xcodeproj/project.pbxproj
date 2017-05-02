@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		63C2C6AB1EB8FDF30029A085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6AA1EB8FDF30029A085 /* Assets.xcassets */; };
 		63C2C6AD1EB8FE080029A085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AC1EB8FE080029A085 /* AppDelegate.swift */; };
-		63C2C6B01EB8FE100029A085 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AE1EB8FE100029A085 /* DetailViewController.swift */; };
+		63C2C6B01EB8FE100029A085 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AE1EB8FE100029A085 /* MapViewController.swift */; };
 		63C2C6B11EB8FE100029A085 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AF1EB8FE100029A085 /* MasterViewController.swift */; };
 		63C2C6B71EB8FE280029A085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B31EB8FE280029A085 /* LaunchScreen.storyboard */; };
 		63C2C6B81EB8FE280029A085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B51EB8FE280029A085 /* Main.storyboard */; };
@@ -25,7 +25,6 @@
 		C313E51C1EB9113900DE4174 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; };
 		C313E51D1EB9113900DE4174 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C313E5241EB91E2F00DE4174 /* KPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E5221EB91E2F00DE4174 /* KPI.swift */; };
-		E8CAEB065D204558C58DDB82 /* Pods_sap_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,7 +49,7 @@
 		63A17CA61EB8F5A800600C34 /* sap-hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sap-hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C2C6AA1EB8FDF30029A085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		63C2C6AC1EB8FE080029A085 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/Controllers/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		63C2C6AE1EB8FE100029A085 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Sources/Controllers/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		63C2C6AE1EB8FE100029A085 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Sources/Controllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		63C2C6AF1EB8FE100029A085 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = Sources/Controllers/MasterViewController.swift; sourceTree = SOURCE_ROOT; };
 		63C2C6B41EB8FE280029A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Controllers/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		63C2C6B61EB8FE280029A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Controllers/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -75,7 +74,6 @@
 				C313E51C1EB9113900DE4174 /* SAPFoundation.framework in Frameworks */,
 				C313E5181EB9113900DE4174 /* SAPCommon.framework in Frameworks */,
 				C313E51A1EB9113900DE4174 /* SAPFiori.framework in Frameworks */,
-				E8CAEB065D204558C58DDB82 /* Pods_sap_hack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +128,7 @@
 				63C2C6B31EB8FE280029A085 /* LaunchScreen.storyboard */,
 				63C2C6B51EB8FE280029A085 /* Main.storyboard */,
 				63C2C6AF1EB8FE100029A085 /* MasterViewController.swift */,
-				63C2C6AE1EB8FE100029A085 /* DetailViewController.swift */,
+				63C2C6AE1EB8FE100029A085 /* MapViewController.swift */,
 			);
 			name = Controllers;
 			path = Sources/Controllers;
@@ -268,7 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E2C26DD47A1AAEB4A587E4BE /* [CP] Copy Pods Resources */ = {
@@ -295,7 +293,7 @@
 			files = (
 				C313E5241EB91E2F00DE4174 /* KPI.swift in Sources */,
 				63C2C6AD1EB8FE080029A085 /* AppDelegate.swift in Sources */,
-				63C2C6B01EB8FE100029A085 /* DetailViewController.swift in Sources */,
+				63C2C6B01EB8FE100029A085 /* MapViewController.swift in Sources */,
 				C313E4FE1EB9032D00DE4174 /* Order.swift in Sources */,
 				63C2C6B11EB8FE100029A085 /* MasterViewController.swift in Sources */,
 				C313E5001EB903C900DE4174 /* Device.swift in Sources */,

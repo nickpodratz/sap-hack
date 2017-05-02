@@ -60,6 +60,10 @@ extension Order: MKOverlay {
         return location
     }
     
+    public var boundingMapRect: MKMapRect {
+        return MKMapRect(origin: MKMapPointForCoordinate(location), size: MKMapSize(width: 10.0, height: 10.0))
+    }
+    
     public var subtitle: String? {
         return requester.name
     }
