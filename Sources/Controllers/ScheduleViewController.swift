@@ -8,6 +8,7 @@
 
 import UIKit
 import SAPFiori
+import TBEmptyDataSet
 
 class ScheduleViewController: UITableViewController {
 
@@ -16,6 +17,10 @@ class ScheduleViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.emptyDataSetDataSource = self
+        tableView.emptyDataSetDelegate = self
+
         tableView.register(FUITimelineCell.self, forCellReuseIdentifier: FUITimelineCell.reuseIdentifier)
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -103,6 +108,34 @@ class ScheduleViewController: UITableViewController {
         }
     }
 
-
 }
+
+// MARK: : TBEmptyDataSetDelegate, TBEmptyDataSetDataSource
+extension ScheduleViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSource {
+    func titleForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Nothing to do?")
+    }
+    
+    func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "… then take a break!")
+    }
+    
+    func emptyDataSetWillAppear(in scrollView: UIScrollView) {
+        tableView.separatorStyle = .none
+    }
+    
+    func emptyDataSetDidDisappear(in scrollView: UIScrollView) {
+        tableView.separatorStyle = .singleLine
+    }
+    
+    func verticalOffsetForEmptyDataSet(in scrollView: UIScrollView) -> CGFloat {
+        let orientation = UIApplication.shared.statusBarOrientation
+        return orientation.isPortrait ? -52 : -22
+    }
+    
+    func verticalSpacesForEmptyDataSet(in scrollView: UIScrollView) -> [CGFloat] {
+        return [12, 12]
+    }
+}
+
 

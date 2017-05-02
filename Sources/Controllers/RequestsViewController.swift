@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TBEmptyDataSet
 
 class RequestsViewController: UITableViewController {
 
@@ -16,6 +17,10 @@ class RequestsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.emptyDataSetDataSource = self
+        tableView.emptyDataSetDelegate = self
+
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
 
@@ -90,4 +95,35 @@ class RequestsViewController: UITableViewController {
 
 
 }
+
+
+// MARK: : TBEmptyDataSetDelegate, TBEmptyDataSetDataSource
+extension RequestsViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSource {
+    func titleForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "No open requests!")
+    }
+    
+    func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "… but that's just a matter of time.")
+    }
+
+    func emptyDataSetWillAppear(in scrollView: UIScrollView) {
+        tableView.separatorStyle = .none
+    }
+    
+    func emptyDataSetDidDisappear(in scrollView: UIScrollView) {
+        tableView.separatorStyle = .singleLine
+    }
+    
+    func verticalOffsetForEmptyDataSet(in scrollView: UIScrollView) -> CGFloat {
+        let orientation = UIApplication.shared.statusBarOrientation
+        return orientation.isPortrait ? -52 : -22
+    }
+    
+    func verticalSpacesForEmptyDataSet(in scrollView: UIScrollView) -> [CGFloat] {
+        return [12, 12]
+    }
+}
+
+
 
