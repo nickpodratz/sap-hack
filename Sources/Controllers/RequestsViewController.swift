@@ -46,6 +46,7 @@ class RequestsViewController: UITableViewController {
         objects.insert(NSDate(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
+        tableView.updateEmptyDataSetIfNeeded()
     }
 
     // MARK: - Segues
@@ -91,6 +92,7 @@ class RequestsViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+        tableView.updateEmptyDataSetIfNeeded()
     }
 
 
