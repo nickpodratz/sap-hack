@@ -14,9 +14,12 @@
 		63C2C6B71EB8FE280029A085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B31EB8FE280029A085 /* LaunchScreen.storyboard */; };
 		63C2C6B81EB8FE280029A085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B51EB8FE280029A085 /* Main.storyboard */; };
 		63C2C6BA1EB8FE340029A085 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B91EB8FE340029A085 /* Info.plist */; };
+		BEFD2AC71337DF892E6169A0 /* Pods_sap_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sap_hack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51B0A5DD361E54E54C6B41A3 /* Pods-sap-hack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sap-hack.release.xcconfig"; path = "Pods/Target Support Files/Pods-sap-hack/Pods-sap-hack.release.xcconfig"; sourceTree = "<group>"; };
 		63A17CA61EB8F5A800600C34 /* sap-hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sap-hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C2C6AA1EB8FDF30029A085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		63C2C6AC1EB8FE080029A085 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/Controllers/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -25,6 +28,7 @@
 		63C2C6B41EB8FE280029A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Controllers/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		63C2C6B61EB8FE280029A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Controllers/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		63C2C6B91EB8FE340029A085 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
+		6B7091CFE68F4E0A2F14BEC9 /* Pods-sap-hack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sap-hack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sap-hack/Pods-sap-hack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +36,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFD2AC71337DF892E6169A0 /* Pods_sap_hack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2942F4D4CC75E39E0FAAE774 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63A17C9D1EB8F5A800600C34 = {
 			isa = PBXGroup;
 			children = (
 				63A17CA81EB8F5A800600C34 /* Sources */,
 				63A17CA71EB8F5A800600C34 /* Products */,
+				FF13ED00FD91006161606E0B /* Pods */,
+				2942F4D4CC75E39E0FAAE774 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +110,15 @@
 			path = Sources/Views;
 			sourceTree = "<group>";
 		};
+		FF13ED00FD91006161606E0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B7091CFE68F4E0A2F14BEC9 /* Pods-sap-hack.debug.xcconfig */,
+				51B0A5DD361E54E54C6B41A3 /* Pods-sap-hack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +126,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63A17CBA1EB8F5A800600C34 /* Build configuration list for PBXNativeTarget "sap-hack" */;
 			buildPhases = (
+				7B32964D69AD240D72F9D428 /* [CP] Check Pods Manifest.lock */,
 				63A17CA21EB8F5A800600C34 /* Sources */,
 				63A17CA31EB8F5A800600C34 /* Frameworks */,
 				63A17CA41EB8F5A800600C34 /* Resources */,
+				63709938918BC42F9D8B45BC /* [CP] Embed Pods Frameworks */,
+				E2C26DD47A1AAEB4A587E4BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,6 +191,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63709938918BC42F9D8B45BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sap-hack/Pods-sap-hack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B32964D69AD240D72F9D428 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2C26DD47A1AAEB4A587E4BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sap-hack/Pods-sap-hack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63A17CA21EB8F5A800600C34 /* Sources */ = {
@@ -295,6 +370,7 @@
 		};
 		63A17CBB1EB8F5A800600C34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B7091CFE68F4E0A2F14BEC9 /* Pods-sap-hack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -310,6 +386,7 @@
 		};
 		63A17CBC1EB8F5A800600C34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51B0A5DD361E54E54C6B41A3 /* Pods-sap-hack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
