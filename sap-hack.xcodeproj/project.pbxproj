@@ -24,6 +24,9 @@
 		C313E51B1EB9113900DE4174 /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5161EB9113900DE4174 /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C313E51C1EB9113900DE4174 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; };
 		C313E51D1EB9113900DE4174 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+        C313E4FE1EB9032D00DE4174 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E4FD1EB9032D00DE4174 /* Order.swift */; };
+        C313E5001EB903C900DE4174 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E4FF1EB903C900DE4174 /* Device.swift */; };
+        C313E5021EB905CF00DE4174 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E5011EB905CF00DE4174 /* Company.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
