@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 struct Company {
     let name: String
     let image: UIImage?
+    let location: CLLocationCoordinate2D?
 }

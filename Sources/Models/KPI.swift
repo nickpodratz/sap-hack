@@ -1,5 +1,5 @@
 //
-//  Device.swift
+//  KPI.swift
 //  sap-hack
 //
 //  Created by Carl Julius Gödecken on 02.05.17.
@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Device {
-    let name: String
-    let kpi: [KPI]
+struct KPI {
+    let key: String
+    let value: String
+    let status: KPIStatus
+}
+
+enum KPIStatus {
+    case normal, warning, danger
 }

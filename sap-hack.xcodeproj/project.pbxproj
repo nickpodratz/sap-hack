@@ -24,6 +24,7 @@
 		C313E51B1EB9113900DE4174 /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5161EB9113900DE4174 /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C313E51C1EB9113900DE4174 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; };
 		C313E51D1EB9113900DE4174 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C313E5241EB91E2F00DE4174 /* KPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E5221EB91E2F00DE4174 /* KPI.swift */; };
 		E8CAEB065D204558C58DDB82 /* Pods_sap_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		C313E5151EB9113900DE4174 /* SAPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPCommon.framework; path = Frameworks/SAPCommon.framework; sourceTree = "<group>"; };
 		C313E5161EB9113900DE4174 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = Frameworks/SAPFiori.framework; sourceTree = "<group>"; };
 		C313E5171EB9113900DE4174 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFoundation.framework; path = Frameworks/SAPFoundation.framework; sourceTree = "<group>"; };
+		C313E5221EB91E2F00DE4174 /* KPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPI.swift; path = Sources/Models/KPI.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				C313E4FD1EB9032D00DE4174 /* Order.swift */,
+				C313E5221EB91E2F00DE4174 /* KPI.swift */,
 				C313E5031EB9073700DE4174 /* Event.swift */,
 				C313E5011EB905CF00DE4174 /* Company.swift */,
 				C313E4FF1EB903C900DE4174 /* Device.swift */,
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C313E5241EB91E2F00DE4174 /* KPI.swift in Sources */,
 				63C2C6AD1EB8FE080029A085 /* AppDelegate.swift in Sources */,
 				63C2C6B01EB8FE100029A085 /* DetailViewController.swift in Sources */,
 				C313E4FE1EB9032D00DE4174 /* Order.swift in Sources */,
