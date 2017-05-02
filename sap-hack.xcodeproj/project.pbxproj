@@ -27,6 +27,7 @@
 		C313E51C1EB9113900DE4174 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; };
 		C313E51D1EB9113900DE4174 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C313E5241EB91E2F00DE4174 /* KPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E5221EB91E2F00DE4174 /* KPI.swift */; };
+		C313E5271EB9302A00DE4174 /* MapCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = C313E5261EB9302A00DE4174 /* MapCallout.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,7 @@
 		C313E5161EB9113900DE4174 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = Frameworks/SAPFiori.framework; sourceTree = "<group>"; };
 		C313E5171EB9113900DE4174 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFoundation.framework; path = Frameworks/SAPFoundation.framework; sourceTree = "<group>"; };
 		C313E5221EB91E2F00DE4174 /* KPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPI.swift; path = Sources/Models/KPI.swift; sourceTree = SOURCE_ROOT; };
+		C313E5261EB9302A00DE4174 /* MapCallout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapCallout.xib; path = Sources/Views/MapCallout.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		63C2C6BC1EB8FE7D0029A085 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C313E5261EB9302A00DE4174 /* MapCallout.xib */,
 			);
 			name = Views;
 			path = Sources/Views;
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63C2C6B81EB8FE280029A085 /* Main.storyboard in Resources */,
+				C313E5271EB9302A00DE4174 /* MapCallout.xib in Resources */,
 				63C2C6B71EB8FE280029A085 /* LaunchScreen.storyboard in Resources */,
 				63C2C6AB1EB8FDF30029A085 /* Assets.xcassets in Resources */,
 			);
