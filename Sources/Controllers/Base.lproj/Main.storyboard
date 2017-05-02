@@ -176,6 +176,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Service Requests" id="Zdf-7t-Un8"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="IIs-ue-JRz">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshView:" destination="7bK-jq-Zjz" eventType="valueChanged" id="zT9-Dp-3NF"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,6 +259,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Schedule" id="Mxx-1k-8yX"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fTH-Td-tef">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshView:" destination="kAA-bG-IC8" eventType="valueChanged" id="Etc-qu-h4H"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33o-Bk-HWn" sceneMemberID="firstResponder"/>
             </objects>

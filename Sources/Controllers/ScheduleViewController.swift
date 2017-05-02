@@ -54,6 +54,12 @@ class ScheduleViewController: UITableViewController {
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.updateEmptyDataSetIfNeeded()
     }
+    
+    @IBAction func refreshView(_ sender: Any) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.tableView.refreshControl?.endRefreshing()
+        }
+    }
 
     // MARK: - Segues
 
