@@ -26,11 +26,42 @@ class Order: NSObject {
         self.location = location
         self.requester = requester
     }
+    
+    static func generateSampleData() -> [Order] {
+        let calendar = Calendar.current
+        let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
+        
+        // devices
+        let dmgMoriClx350 = Device(name: "CLX 350", kpi: [])
+        let lasertec1 = Device(name: "LASERTEC 20 PrecisionTool", kpi: [
+            KPI(key: "lens temperature", value: "125 °C", status: .danger)
+        ])
+        let kukaLbr = Device(name: "KUKA LBR iiwa", kpi: [])
+        let kukaKr = Device(name: "KUKA KR 210-2 F exclusive", kpi: [])
+        let momCorp1X = Device(name: "MomCorp Robot 1-X", kpi: [])
+        
+        // companies
+        let miesens = Company(name: "Miesens AG", image: nil, location: CLLocationCoordinate2D(latitude: 52.5380, longitude: 13.2631))
+        let mapple = Company(name: "Mapple, Inc.", image: nil, location: CLLocationCoordinate2D(latitude: 52.5035, longitude: 13.3288))
+        
+        let orders = [
+            Order(title: "Defekt bei Drehmaschine", device: dmgMoriClx350, location: miesens.location!, requester: miesens),
+            Order(title: "Geplante Wartung", device: dmgMoriClx350, location: miesens.location!, requester: miesens),
+            Order(title: "HALP plz 😵", device: momCorp1X, creationDate: yesterday, location: mapple.location!, requester: mapple)
+        ]
+        return orders
+    }
+    
+    static var sampleData: [Order] = Order.generateSampleData()
 }
 
-extension Order: MKAnnotation {
+extension Order: MKOverlay {
     public var coordinate: CLLocationCoordinate2D {
         return location
+    }
+    
+    public var boundingMapRect: MKMapRect {
+        return MKMapRect(origin: MKMapPointForCoordinate(location), size: MKMapSize(width: 10.0, height: 10.0))
     }
     
     public var subtitle: String? {
