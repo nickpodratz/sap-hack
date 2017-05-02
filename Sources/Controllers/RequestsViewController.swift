@@ -8,6 +8,7 @@
 
 import UIKit
 import TBEmptyDataSet
+import SAPFiori
 
 class RequestsViewController: UITableViewController {
 
@@ -20,6 +21,10 @@ class RequestsViewController: UITableViewController {
         
         tableView.emptyDataSetDataSource = self
         tableView.emptyDataSetDelegate = self
+        
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
 
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
@@ -73,10 +78,14 @@ class RequestsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier, for: indexPath)
+        guard let tableViewCell = cell as? FUIObjectTableViewCell else { return cell }
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        tableViewCell.headlineText = "Headline"
+        tableViewCell.subheadlineText = "Subheadline"
+        tableViewCell.descriptionText = "Description"
+        tableViewCell.footnoteText = "Footnote"
+        tableViewCell.imageView?.image = UIImage()
         return cell
     }
 
