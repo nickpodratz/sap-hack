@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2639D6DD4327AF491FAC3F17 /* Pods_sap_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */; };
+		637790371EB92093001E2944 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637790361EB92093001E2944 /* ScheduleViewController.swift */; };
 		63C2C6AB1EB8FDF30029A085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6AA1EB8FDF30029A085 /* Assets.xcassets */; };
 		63C2C6AD1EB8FE080029A085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AC1EB8FE080029A085 /* AppDelegate.swift */; };
 		63C2C6B01EB8FE100029A085 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AE1EB8FE100029A085 /* MapViewController.swift */; };
-		63C2C6B11EB8FE100029A085 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AF1EB8FE100029A085 /* MasterViewController.swift */; };
+		63C2C6B01EB8FE100029A085 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AE1EB8FE100029A085 /* DetailViewController.swift */; };
+		63C2C6B11EB8FE100029A085 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AF1EB8FE100029A085 /* RequestsViewController.swift */; };
 		63C2C6B71EB8FE280029A085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B31EB8FE280029A085 /* LaunchScreen.storyboard */; };
 		63C2C6B81EB8FE280029A085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B51EB8FE280029A085 /* Main.storyboard */; };
 		C313E4FE1EB9032D00DE4174 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E4FD1EB9032D00DE4174 /* Order.swift */; };
@@ -47,11 +49,13 @@
 /* Begin PBXFileReference section */
 		100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sap_hack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B0A5DD361E54E54C6B41A3 /* Pods-sap-hack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sap-hack.release.xcconfig"; path = "Pods/Target Support Files/Pods-sap-hack/Pods-sap-hack.release.xcconfig"; sourceTree = "<group>"; };
+		637790361EB92093001E2944 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = Sources/Controllers/ScheduleViewController.swift; sourceTree = SOURCE_ROOT; };
 		63A17CA61EB8F5A800600C34 /* sap-hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sap-hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C2C6AA1EB8FDF30029A085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		63C2C6AC1EB8FE080029A085 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/Controllers/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		63C2C6AE1EB8FE100029A085 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Sources/Controllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
-		63C2C6AF1EB8FE100029A085 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = Sources/Controllers/MasterViewController.swift; sourceTree = SOURCE_ROOT; };
+		63C2C6AE1EB8FE100029A085 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Sources/Controllers/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		63C2C6AF1EB8FE100029A085 /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestsViewController.swift; path = Sources/Controllers/RequestsViewController.swift; sourceTree = SOURCE_ROOT; };
 		63C2C6B41EB8FE280029A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Controllers/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		63C2C6B61EB8FE280029A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Controllers/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		63C2C6B91EB8FE340029A085 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -129,8 +133,10 @@
 			children = (
 				63C2C6B31EB8FE280029A085 /* LaunchScreen.storyboard */,
 				63C2C6B51EB8FE280029A085 /* Main.storyboard */,
-				63C2C6AF1EB8FE100029A085 /* MasterViewController.swift */,
 				63C2C6AE1EB8FE100029A085 /* MapViewController.swift */,
+				63C2C6AF1EB8FE100029A085 /* RequestsViewController.swift */,
+				637790361EB92093001E2944 /* ScheduleViewController.swift */,
+				63C2C6AE1EB8FE100029A085 /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			path = Sources/Controllers;
@@ -297,7 +303,8 @@
 				63C2C6AD1EB8FE080029A085 /* AppDelegate.swift in Sources */,
 				63C2C6B01EB8FE100029A085 /* MapViewController.swift in Sources */,
 				C313E4FE1EB9032D00DE4174 /* Order.swift in Sources */,
-				63C2C6B11EB8FE100029A085 /* MasterViewController.swift in Sources */,
+				637790371EB92093001E2944 /* ScheduleViewController.swift in Sources */,
+				63C2C6B11EB8FE100029A085 /* RequestsViewController.swift in Sources */,
 				C313E5001EB903C900DE4174 /* Device.swift in Sources */,
 				C313E5041EB9073700DE4174 /* Event.swift in Sources */,
 				C313E5061EB907D500DE4174 /* Person.swift in Sources */,
