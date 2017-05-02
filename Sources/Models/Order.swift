@@ -27,7 +27,7 @@ class Order: NSObject {
         self.requester = requester
     }
     
-    static func sampleData() -> [Order] {
+    static func generateSampleData() -> [Order] {
         let calendar = Calendar.current
         let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
         
@@ -51,9 +51,11 @@ class Order: NSObject {
         ]
         return orders
     }
+    
+    static var sampleData: [Order] = Order.generateSampleData()
 }
 
-extension Order: MKAnnotation {
+extension Order: MKOverlay {
     public var coordinate: CLLocationCoordinate2D {
         return location
     }
