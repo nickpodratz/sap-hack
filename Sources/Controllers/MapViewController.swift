@@ -20,6 +20,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadPlacemarks()
+        mapView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,3 +48,17 @@ class MapViewController: UIViewController {
     }
 }
 
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseId = "standardPin"
+        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        //annotationView.leftCalloutAccessoryView = UIImageView(image: #imageLiteral(resourceName: "company1"))
+        annotationView.canShowCallout = true
+        annotationView.detailCalloutAccessoryView = UIViewController(nibName: "MapCallout", bundle: nil).view
+        //annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        annotationView.image = UIImage(named: "AppIcon")
+        return annotationView
+    }
+    
+}
