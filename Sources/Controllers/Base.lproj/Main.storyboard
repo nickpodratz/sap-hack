@@ -70,6 +70,41 @@
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
+        <!--Request Details View Controller-->
+        <scene sceneID="fOl-Te-XBw">
+            <objects>
+                <tableViewController id="reQ-st-9MN" customClass="RequestDetailsViewController" customModule="sap_hack" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5pz-oO-gXn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0tz-WK-eE6">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0tz-WK-eE6" id="09m-Ly-pqb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="reQ-st-9MN" id="aC7-U4-UE3"/>
+                            <outlet property="delegate" destination="reQ-st-9MN" id="Q1w-fL-Fb8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eTc-jq-zzR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jIG-h0-Bqf">
+                            <connections>
+                                <action selector="dismiss" destination="reQ-st-9MN" id="ALZ-wa-Zl8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mpo-iT-2XP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3255.1999999999998" y="-999.85007496251887"/>
+        </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
@@ -130,6 +165,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
+                                    <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" trigger="accessoryAction" modalPresentationStyle="formSheet" id="zRg-vA-EGD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -205,7 +241,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" trigger="accessoryAction" id="LlV-M7-xsT"/>
+                                    <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" trigger="accessoryAction" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="izi-dx-RYs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -221,12 +257,31 @@
             </objects>
             <point key="canvasLocation" x="1462" y="-646"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QCU-7s-RGp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VD7-1P-ON7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U5W-TL-PgP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="reQ-st-9MN" kind="relationship" relationship="rootViewController" id="xjo-vJ-eia"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tt1-iy-rZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2316" y="-999.85007496251887"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Inbox" width="25" height="25"/>
         <image name="Schedule" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LlV-M7-xsT"/>
+        <segue reference="izi-dx-RYs"/>
+        <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>

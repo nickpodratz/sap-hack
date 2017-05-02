@@ -93,6 +93,10 @@ class ScheduleViewController: UITableViewController {
         timelineCell.subAttributeText =  "8 min (2.4 min)"
         return timelineCell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetail", sender: self)
+    }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
