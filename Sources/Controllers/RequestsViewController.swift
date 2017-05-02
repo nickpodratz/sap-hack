@@ -33,7 +33,7 @@ class RequestsViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? MapViewController
+            detailViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
     }
 
