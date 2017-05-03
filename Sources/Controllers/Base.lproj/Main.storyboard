@@ -503,7 +503,7 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" modalPresentationStyle="fullScreen" id="0XN-xS-O12"/>
+                        <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" modalPresentationStyle="pageSheet" id="0XN-xS-O12"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -586,7 +586,7 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" modalPresentationStyle="fullScreen" id="XTR-8F-4l7"/>
+                        <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" modalPresentationStyle="pageSheet" id="XTR-8F-4l7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33o-Bk-HWn" sceneMemberID="firstResponder"/>
