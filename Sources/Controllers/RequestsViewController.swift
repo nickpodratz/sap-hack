@@ -56,10 +56,14 @@ class RequestsViewController: UITableViewController {
     
     @IBAction func refreshView(_ sender: Any) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.serviceRequests = ServiceRequest.generateSamples(amount: 15)
-            self.tableView.reloadData()
+            self.generateServiceRequests()
             self.tableView.refreshControl?.endRefreshing()
         }
+    }
+    
+    fileprivate func generateServiceRequests() {
+        self.serviceRequests = ServiceRequest.generateSamples(amount: 15)
+        self.tableView.reloadData()
     }
 
     // MARK: - Segues
@@ -93,7 +97,7 @@ class RequestsViewController: UITableViewController {
         
         tableViewCell.headlineText = serviceRequest.title
         tableViewCell.subheadlineText = serviceRequest.subtitle
-        tableViewCell.footnoteText = "\(serviceRequest.company), \(serviceRequest.device)"
+        tableViewCell.footnoteText = "\(serviceRequest.company.name), \(serviceRequest.device.name)"
         tableViewCell.imageView?.image = UIImage()
         return cell
     }
@@ -127,6 +131,10 @@ extension RequestsViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSour
         return NSAttributedString(string: "¯\\_(ツ)_/¯")
     }
 
+    func emptyDataSetDidTapEmptyView(in scrollView: UIScrollView) {
+        generateServiceRequests()
+    }
+    
     func emptyDataSetWillAppear(in scrollView: UIScrollView) {
         tableView.separatorStyle = .none
     }

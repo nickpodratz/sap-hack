@@ -58,12 +58,16 @@ class ScheduleViewController: UITableViewController {
     
     @IBAction func refreshView(_ sender: Any) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.serviceRequests = ServiceRequest.generateSamples(amount: 15)
-            self.tableView.reloadData()
+            self.generateServiceRequests()
             self.tableView.refreshControl?.endRefreshing()
         }
     }
 
+    fileprivate func generateServiceRequests() {
+        self.serviceRequests = ServiceRequest.generateSamples(amount: 15)
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -92,8 +96,8 @@ class ScheduleViewController: UITableViewController {
         guard let timelineCell = cell as? FUITimelineCell else { return cell }
         let request = serviceRequests[indexPath.row]
         timelineCell.timelineWidth = CGFloat(70.0)
-        timelineCell.headlineText = "Headline"// ticket.title
-        timelineCell.subheadlineText = "id: 1234" //ticket.productid
+        timelineCell.headlineText = request.title ?? ""
+        timelineCell.subheadlineText = request.company.name //ticket.productid
         timelineCell.nodeImage = FUITimelineNode.open
         timelineCell.eventText =  "10:00 AM"
         timelineCell.eventImage =  #imageLiteral(resourceName: "Pin_2") // TODO: Replace with your image
@@ -134,6 +138,10 @@ extension ScheduleViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSour
     
     func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
         return NSAttributedString(string: "¯\\_(ツ)_/¯")
+    }
+    
+    func emptyDataSetDidTapEmptyView(in scrollView: UIScrollView) {
+        generateServiceRequests()
     }
     
     func emptyDataSetWillAppear(in scrollView: UIScrollView) {
