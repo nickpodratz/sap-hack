@@ -9,11 +9,16 @@
 import UIKit
 import TBEmptyDataSet
 import SAPFiori
+import Haneke
 
 class RequestsViewController: UITableViewController {
 
     var mapViewController: MapViewController? = nil
-    var serviceRequests = [ServiceRequest]()
+    var serviceRequests = ServiceRequest.generateSamples(amount: 3) {
+        didSet {
+            tabBarController?.tabBar.items?.last?.badgeValue = serviceRequests.count == 0 ? nil : "\(serviceRequests.count)"
+        }
+    }
 
 
     override func viewDidLoad() {
@@ -37,6 +42,7 @@ class RequestsViewController: UITableViewController {
             let controllers = split.viewControllers
             mapViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
+        mapViewController?.populate(requests: self.serviceRequests, scheduled: false)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +65,7 @@ class RequestsViewController: UITableViewController {
     }
     
     @IBAction func refreshView(_ sender: Any) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.generateServiceRequests()
             self.tableView.refreshControl?.endRefreshing()
         }
@@ -101,7 +107,17 @@ class RequestsViewController: UITableViewController {
         guard let tableViewCell = cell as? FUIObjectTableViewCell else { return cell }
 
         let serviceRequest = serviceRequests[indexPath.row]
-        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        if let url = URL(string: serviceRequest.company.image) {
+            appDelegate?.cache.fetch(URL: url).onSuccess { image in
+                if let data = NSData(contentsOf: url) {
+                    if let image = UIImage(data: data as Data) {
+                        tableViewCell.detailImage = image
+                        tableViewCell.detailImageView.layer.cornerRadius = tableViewCell.detailImageView.bounds.width/2
+                    }
+                }
+            }
+        }
         tableViewCell.headlineText = serviceRequest.title
         tableViewCell.subheadlineText = serviceRequest.subtitle
         tableViewCell.footnoteText = "\(serviceRequest.company.name), \(serviceRequest.device.name)"

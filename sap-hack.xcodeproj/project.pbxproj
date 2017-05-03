@@ -30,6 +30,7 @@
 		C313E51D1EB9113900DE4174 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C313E5171EB9113900DE4174 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C313E5241EB91E2F00DE4174 /* KPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E5221EB91E2F00DE4174 /* KPI.swift */; };
 		C313E5271EB9302A00DE4174 /* MapCallout.xib in Resources */ = {isa = PBXBuildFile; fileRef = C313E5261EB9302A00DE4174 /* MapCallout.xib */; };
+		C36F5E1E1EB9AFBC002B0614 /* TimelineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36F5E1D1EB9AFBC002B0614 /* TimelineCollectionViewCell.swift */; };
 		C3C83E1B1EB949D1003D6825 /* KPIHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C83E1A1EB949D1003D6825 /* KPIHeaderTableViewCell.swift */; };
 		C3C83E1D1EB95042003D6825 /* FuryKPIHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C83E1C1EB95042003D6825 /* FuryKPIHeaderCell.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		C313E5171EB9113900DE4174 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFoundation.framework; path = Frameworks/SAPFoundation.framework; sourceTree = "<group>"; };
 		C313E5221EB91E2F00DE4174 /* KPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPI.swift; path = Sources/Models/KPI.swift; sourceTree = SOURCE_ROOT; };
 		C313E5261EB9302A00DE4174 /* MapCallout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapCallout.xib; path = Sources/Views/MapCallout.xib; sourceTree = SOURCE_ROOT; };
+		C36F5E1D1EB9AFBC002B0614 /* TimelineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineCollectionViewCell.swift; path = Sources/Views/TimelineCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C3C83E1A1EB949D1003D6825 /* KPIHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KPIHeaderTableViewCell.swift; path = Sources/Controllers/KPIHeaderTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C3C83E1C1EB95042003D6825 /* FuryKPIHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuryKPIHeaderCell.swift; path = Sources/Views/FuryKPIHeaderCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -171,6 +173,7 @@
 			children = (
 				C313E5261EB9302A00DE4174 /* MapCallout.xib */,
 				C3C83E1C1EB95042003D6825 /* FuryKPIHeaderCell.swift */,
+				C36F5E1D1EB9AFBC002B0614 /* TimelineCollectionViewCell.swift */,
 			);
 			name = Views;
 			path = Sources/Views;
@@ -314,6 +317,7 @@
 			files = (
 				6377903B1EB93C52001E2944 /* RequestDetailsViewController.swift in Sources */,
 				637790391EB92CBB001E2944 /* MapViewController.swift in Sources */,
+				C36F5E1E1EB9AFBC002B0614 /* TimelineCollectionViewCell.swift in Sources */,
 				C313E5241EB91E2F00DE4174 /* KPI.swift in Sources */,
 				C3C83E1B1EB949D1003D6825 /* KPIHeaderTableViewCell.swift in Sources */,
 				C3C83E1D1EB95042003D6825 /* FuryKPIHeaderCell.swift in Sources */,

@@ -37,6 +37,7 @@ class ScheduleViewController: UITableViewController {
             let controllers = split.viewControllers
             mapViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
+        tabBarController?.tabBar.items?.last?.badgeValue = "3"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +61,7 @@ class ScheduleViewController: UITableViewController {
     }
     
     @IBAction func refreshView(_ sender: Any) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.generateServiceRequests()
             self.tableView.refreshControl?.endRefreshing()
         }
@@ -156,10 +157,6 @@ extension ScheduleViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSour
     
     func emptyDataSetWillAppear(in scrollView: UIScrollView) {
         tableView.separatorStyle = .none
-    }
-    
-    func emptyDataSetDidDisappear(in scrollView: UIScrollView) {
-        tableView.separatorStyle = .singleLine
     }
     
     func verticalOffsetForEmptyDataSet(in scrollView: UIScrollView) -> CGFloat {

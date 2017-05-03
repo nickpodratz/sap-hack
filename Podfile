@@ -6,6 +6,7 @@ target 'sap-hack' do
   use_frameworks!
   pod 'TBEmptyDataSet'
   pod 'RandomKit', :git => 'https://github.com/nvzqz/RandomKit.git'
+  pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift', :branch => 'swift-3'
   # Pods for sap-hack
 
 end

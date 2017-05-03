@@ -8,12 +8,13 @@
 
 import UIKit
 import SAPFiori
+import Haneke
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-
+    let cache = Shared.imageCache
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         UINavigationBar.applyFioriStyle()
         splitViewController.delegate = self
+        
+        // Setup cache
+        let iconFormat = Format<UIImage>(name: "icons", diskCapacity: 10 * 1024 * 1024) { image in
+            return image
+        }
+        cache.addFormat(iconFormat)
+
         return true
     }
     
@@ -60,4 +68,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
 }
-

@@ -22,19 +22,9 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
         zoomToPlacemarks()
     }
-    
+
     func zoomToPlacemarks() {
         mapView.setRegion(berlinRegion, animated: false)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
@@ -76,8 +66,8 @@ extension MapViewController: MKMapViewDelegate {
         let reuseId = "standardPin"
         let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         
-        if let request = serviceRequests[annotation as! MKPointAnnotation] {
-            annotationView.pinTintColor = request.isScheduled ? .green : .purple
+        if let pointAnnotation = annotation as? MKPointAnnotation, let request = serviceRequests[pointAnnotation] {
+            annotationView.pinTintColor = request.isScheduled ? .red : .purple
         }
         
         

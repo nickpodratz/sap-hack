@@ -1,27 +1,36 @@
 PODS:
+  - HanekeSwift (0.10.1)
   - RandomKit (4.5.2):
     - ShiftOperations
   - ShiftOperations (1.0.0)
   - TBEmptyDataSet (2.5)
 
 DEPENDENCIES:
+  - HanekeSwift (from `https://github.com/Haneke/HanekeSwift`, branch `swift-3`)
   - RandomKit (from `https://github.com/nvzqz/RandomKit.git`)
   - TBEmptyDataSet
 
 EXTERNAL SOURCES:
+  HanekeSwift:
+    :branch: swift-3
+    :git: https://github.com/Haneke/HanekeSwift
   RandomKit:
     :git: https://github.com/nvzqz/RandomKit.git
 
 CHECKOUT OPTIONS:
+  HanekeSwift:
+    :commit: 2f6d87f1f725d204d85cb34492e8c399cd5a200f
+    :git: https://github.com/Haneke/HanekeSwift
   RandomKit:
     :commit: 3169c015d60c4441877d2728a9587818e7c6587c
     :git: https://github.com/nvzqz/RandomKit.git
 
 SPEC CHECKSUMS:
+  HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
   RandomKit: 6e7ad839c9b4277c20dc69bc94e047cdcabfd230
   ShiftOperations: 0c77c06851e7976c2665d601b46af123dbffeade
   TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
 
-PODFILE CHECKSUM: c415b967f61c8c45441229f05a52fcd0f7cc8819
+PODFILE CHECKSUM: bc4193cb78d0060ca4b4238a3829a6d4be524bca
 
 COCOAPODS: 1.2.1
