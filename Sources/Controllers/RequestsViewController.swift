@@ -48,7 +48,7 @@ class RequestsViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        serviceRequests.insert(ServiceRequest.generateSamples(amount: 1).first!, at: 0)
+        serviceRequests.insert(ServiceRequest.generateSample(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.updateEmptyDataSetIfNeeded()
@@ -87,14 +87,12 @@ class RequestsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier, for: indexPath)
         guard let tableViewCell = cell as? FUIObjectTableViewCell else { return cell }
 
-        tableViewCell.headlineText = "Headline"
-        tableViewCell.subheadlineText = "Subheadline"
-        tableViewCell.descriptionText = "Description"
-        tableViewCell.footnoteText = "Footnote"
-//        tableViewCell.substatusImage = #imageLiteral(resourceName: "Warning")
-        tableViewCell.substatusImage = #imageLiteral(resourceName: "Alert")
-//        tableViewCell.substatusImageView.tintColor = UIColor.preferredFioriColor(forStyle: .critical)
-        tableViewCell.substatusImageView.tintColor = UIColor.preferredFioriColor(forStyle: .negative)
+        let serviceRequest = serviceRequests[indexPath.row]
+        
+        tableViewCell.headlineText = serviceRequest.title
+        tableViewCell.subheadlineText = serviceRequest.subtitle
+        tableViewCell.footnoteText = "\(serviceRequest.company), \(serviceRequest.device)"
+        tableViewCell.imageView?.image = UIImage()
         return cell
     }
 
