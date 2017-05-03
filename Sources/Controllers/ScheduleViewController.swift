@@ -13,10 +13,12 @@ import TBEmptyDataSet
 class ScheduleViewController: UITableViewController {
 
     var detailViewController: MapViewController? = nil
-    var objects = [Any]()
+    var objects = [Order]()
+    var backlogObjects = Order.generateSampleData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         tableView.emptyDataSetDataSource = self
         tableView.emptyDataSetDelegate = self
@@ -49,7 +51,7 @@ class ScheduleViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
+        objects.insert(backlogObjects.removeFirst(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.updateEmptyDataSetIfNeeded()
@@ -64,12 +66,13 @@ class ScheduleViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "toDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
-                let controller = (segue.destination as! UINavigationController).topViewController as! MapViewController
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                let order = objects[indexPath.row]
+                let controller = (segue.destination as! UINavigationController).topViewController as! RequestDetailsViewController
+                controller.order = order
+                //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                //controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }

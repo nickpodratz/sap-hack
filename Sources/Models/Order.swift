@@ -32,13 +32,13 @@ class Order: NSObject {
         let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
         
         // devices
-        let dmgMoriClx350 = Device(name: "CLX 350", kpi: [])
+        let dmgMoriClx350 = Device(name: "CLX 350", kpi: [KPI(key: "lens temperature", value: "125°C", status: .danger), KPI(key: "lens temperature", value: "125°C", status: .danger)])
         let lasertec1 = Device(name: "LASERTEC 20 PrecisionTool", kpi: [
-            KPI(key: "lens temperature", value: "125 °C", status: .danger)
+            KPI(key: "lens temperature", value: "125°C", status: .danger)
         ])
-        let kukaLbr = Device(name: "KUKA LBR iiwa", kpi: [])
-        let kukaKr = Device(name: "KUKA KR 210-2 F exclusive", kpi: [])
-        let momCorp1X = Device(name: "MomCorp Robot 1-X", kpi: [])
+        let kukaLbr = Device(name: "KUKA LBR iiwa", kpi: [KPI(key: "lens temperature", value: "125°C", status: .danger)])
+        let kukaKr = Device(name: "KUKA KR 210-2 F exclusive", kpi: [KPI(key: "lens temperature", value: "125°C", status: .danger)])
+        let momCorp1X = Device(name: "MomCorp Robot 1-X", kpi: [KPI(key: "lens temperature", value: "125 °C", status: .danger)])
         
         // companies
         let miesens = Company(name: "Miesens AG", image: nil, location: CLLocationCoordinate2D(latitude: 52.5380, longitude: 13.2631))
