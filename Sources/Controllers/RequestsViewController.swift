@@ -22,6 +22,8 @@ class RequestsViewController: UITableViewController {
         tableView.emptyDataSetDataSource = self
         tableView.emptyDataSetDelegate = self
         
+        tableView.backgroundColor = UIColor.preferredFioriColor(forStyle: .backgroundBase)
+        
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
