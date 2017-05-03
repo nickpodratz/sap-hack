@@ -41,15 +41,19 @@ extension ServiceRequest: Sampled {
     typealias T = ServiceRequest
     static func generateSamples(amount: Int) -> [ServiceRequest] {
         let titles = [
-            "Defect wheel",
+            "Defective wheel",
             "Scheduled maintenance",
-            "HELP plz 😵",
-            "Always too loud"
+            "Help, the machine is smoking and it smells really bad",
+            "Always too loud",
+            "Throughput has decreased dramatically",
+            "Controller displays CRITICAL TEMPERATURE",
+            "Can you come over please?"
             ].shuffled(using: &Xoroshiro.threadLocal.pointee)
         return (0..<amount).map { i in
             let device = Device.generateSample()
             let request = ServiceRequest(title: titles[i % titles.count], device: device, creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample(), requester: Person.generateSample())
             request.events = Event.conversation(about: device)
+            request.dueDate = Date().addingTimeInterval(Double.random(within: 120...20000,using: &Xoroshiro.threadLocal.pointee))
             return request
         }
     }

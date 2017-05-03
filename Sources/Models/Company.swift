@@ -33,7 +33,7 @@ extension Company: Sampled {
             "http://images.china.cn/attachement/jpg/site1003/20111018/001fd04cfc9010078d9e5b.jpg",
             "http://files.newsnetz.ch/story/2/2/7/22760527/19/topelement.jpg",
             ].shuffled(using: &Xoroshiro.threadLocal.pointee)
-        let companies = ["Pineapple, Inc.", "Miesens AG", "Microhard Corporation", "PAS SE", "Googolplex, Inc.", "Mapple, Inc."].shuffled(using: &Xoroshiro.threadLocal.pointee)
+        let companies = ["Pineapple, Inc.", "Miesens AG", "Microhard Corporation", "PAS SE", "Googolplex, Inc.", "Mapple, Inc.", "Hardware GmbH und Co. KG", "JCN", "Sanfrancisco.com", "Amazing.lol", "pH Enterprise"].shuffled(using: &Xoroshiro.threadLocal.pointee)
         var location: CLLocationCoordinate2D {
             let latitude = Float.random(within: 52.4644...52.5644, using: &Xoroshiro.threadLocal.pointee)
             let longitude = Float.random(within: 13.3627...13.4627, using: &Xoroshiro.threadLocal.pointee)

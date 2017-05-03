@@ -120,7 +120,7 @@ class RequestsViewController: UITableViewController {
         }
         tableViewCell.headlineText = serviceRequest.title
         tableViewCell.subheadlineText = serviceRequest.subtitle
-        tableViewCell.footnoteText = "\(serviceRequest.company.name), \(serviceRequest.device.name)"
+        tableViewCell.footnoteText = serviceRequest.device.name
         tableViewCell.imageView?.image = UIImage()
         return cell
     }

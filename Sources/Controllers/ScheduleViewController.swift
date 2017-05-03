@@ -9,6 +9,7 @@
 import UIKit
 import SAPFiori
 import TBEmptyDataSet
+import RandomKit
 
 class ScheduleViewController: UITableViewController {
 
@@ -68,7 +69,7 @@ class ScheduleViewController: UITableViewController {
     }
 
     fileprivate func generateServiceRequests() {
-        let newAnnotations = ServiceRequest.generateSamples(amount: 15)
+        let newAnnotations = ServiceRequest.generateSamples(amount: 15).sorted(by: {$0.0.dueDate! < $0.1.dueDate!})
         for newAnnotation in newAnnotations {
             newAnnotation.isScheduled = true
         }
@@ -100,8 +101,14 @@ class ScheduleViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return serviceRequests.count
     }
+    
+    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        var randomGenerator = Xoroshiro.threadLocal.pointee
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: FUITimelineCell.reuseIdentifier, for: indexPath)
         guard let timelineCell = cell as? FUITimelineCell else { return cell }
         let request = serviceRequests[indexPath.row]
@@ -109,13 +116,13 @@ class ScheduleViewController: UITableViewController {
         timelineCell.headlineText = request.title ?? ""
         timelineCell.subheadlineText = request.company.name //ticket.productid
         timelineCell.nodeImage = FUITimelineNode.open
-        timelineCell.eventText =  "10:00 AM"
+        timelineCell.eventText = dateFormatter.string(from: request.dueDate!)
         timelineCell.eventImage =  #imageLiteral(resourceName: "Pin_2") // TODO: Replace with your image
         timelineCell.eventImageView.tintColor = UIColor.preferredFioriColor(forStyle: .tintColorDark)
         timelineCell.statusImage = UIImage() // TODO: Replace with your image
-        timelineCell.subStatusText =  "rainy"
+        //timelineCell.subStatusText =  "rainy"
         timelineCell.attributeText =  request.device.name // "1h 30 min"
-        timelineCell.subAttributeText =  "8 min (2.4 min)"
+        timelineCell.subAttributeText = "\(Int.random(within: 4...38, using: &Xoroshiro.defaultReseeding)) min (\(Int.random(within: 0...9, using: &Xoroshiro.defaultReseeding)).\(Int.random(within: 0...9, using: &Xoroshiro.default)) km)"
         return timelineCell
     }
     

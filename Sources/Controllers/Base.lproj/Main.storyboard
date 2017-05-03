@@ -64,7 +64,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Location overview" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="mapView" destination="5MN-zS-tW6" id="jqG-LC-3No"/>
                     </connections>
@@ -94,7 +94,7 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3zn-Uf-fkC">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="113.5"/>
                                                     <color key="backgroundColor" red="0.26690217849999998" green="0.36714249850000003" blue="0.458716929" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gbV-qp-7p0">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gbV-qp-7p0">
                                                         <size key="itemSize" width="160" height="113"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -102,7 +102,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="s7n-en-oYE" customClass="FuryKPIHeaderCell" customModule="sap_hack" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="160" height="113"/>
+                                                            <rect key="frame" x="0.0" y="0.5" width="160" height="113"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="113"/>

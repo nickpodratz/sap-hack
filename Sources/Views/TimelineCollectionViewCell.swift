@@ -37,21 +37,31 @@ class TimelineCollectionViewCell: UICollectionViewCell {
             loadPortrait(locatedAt: person.image)
             contentLabel.text = comment
             contentLabel.isHidden = false
+            
         case .assignment(let person):
-            icon.image = FUITimelineNode.complete
+            icon.image = FUITimelineNode.start
             contentLabel.isHidden = true
            loadPortrait(locatedAt: person.image)
             titleLabel.attributedText = formattedString
                 .bold(person.name)
                 .normal(" self-assigned this")
+            
         case .telemetry(let device, let message):
+            icon.image = FUITimelineNode.inactive
             titleLabel.attributedText = formattedString
                 .bold(device.name)
                 .normal(" has uploaded telemetry")
             loadPortrait(locatedAt: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/2_komponenten_einfachdosierer_auf_portal.jpg/800px-2_komponenten_einfachdosierer_auf_portal.jpg")
             contentLabel.text = message
-        default:
-            contentLabel.isHidden = true
+        
+        case .intervention(let person, let message):
+            icon.image = FUITimelineNode.complete
+            titleLabel.attributedText = formattedString
+                .bold(person.name)
+                .normal(" performed a ")
+                .bold("repair")
+            loadPortrait(locatedAt: person.image)
+            contentLabel.text = message
         }
         
         personImageView.layer.cornerRadius = personImageView.frame.height / 2
