@@ -1,12 +1,27 @@
 PODS:
+  - RandomKit (4.5.2):
+    - ShiftOperations
+  - ShiftOperations (1.0.0)
   - TBEmptyDataSet (2.5)
 
 DEPENDENCIES:
+  - RandomKit (from `https://github.com/nvzqz/RandomKit.git`)
   - TBEmptyDataSet
 
+EXTERNAL SOURCES:
+  RandomKit:
+    :git: https://github.com/nvzqz/RandomKit.git
+
+CHECKOUT OPTIONS:
+  RandomKit:
+    :commit: 3169c015d60c4441877d2728a9587818e7c6587c
+    :git: https://github.com/nvzqz/RandomKit.git
+
 SPEC CHECKSUMS:
+  RandomKit: 6e7ad839c9b4277c20dc69bc94e047cdcabfd230
+  ShiftOperations: 0c77c06851e7976c2665d601b46af123dbffeade
   TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
 
-PODFILE CHECKSUM: 168754b9fb56679bfd16dddb69d1b21616adc5f7
+PODFILE CHECKSUM: c415b967f61c8c45441229f05a52fcd0f7cc8819
 
 COCOAPODS: 1.2.1

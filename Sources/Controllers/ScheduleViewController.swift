@@ -12,9 +12,8 @@ import TBEmptyDataSet
 
 class ScheduleViewController: UITableViewController {
 
-    var detailViewController: MapViewController? = nil
-    var objects = [Order]()
-    var backlogObjects = Order.generateSampleData()
+    var mapViewController: MapViewController? = nil
+    var serviceRequests = [ServiceRequest]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +35,7 @@ class ScheduleViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
+            mapViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
     }
 
@@ -51,28 +50,39 @@ class ScheduleViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        objects.insert(backlogObjects.removeFirst(), at: 0)
+        let newRequest = ServiceRequest.generateSample()
+        newRequest.isScheduled = true
+        serviceRequests.insert(newRequest, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.updateEmptyDataSetIfNeeded()
+        mapViewController?.addAnnotation(request: newRequest, isScheduled: true)
     }
     
     @IBAction func refreshView(_ sender: Any) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.generateServiceRequests()
             self.tableView.refreshControl?.endRefreshing()
         }
     }
 
+    fileprivate func generateServiceRequests() {
+        let newAnnotations = ServiceRequest.generateSamples(amount: 15)
+        for newAnnotation in newAnnotations {
+            newAnnotation.isScheduled = true
+        }
+        self.serviceRequests = newAnnotations
+        self.tableView.reloadData()
+        self.mapViewController?.removeAnnotations(annotationIsScheduled: true)
+        self.mapViewController?.populate(requests: self.serviceRequests, scheduled: true)
+    }
+    
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let order = objects[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! RequestDetailsViewController
-                controller.order = order
-                //controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                //controller.navigationItem.leftItemsSupplementBackButton = true
+                let request = serviceRequests[indexPath.row]
             }
         }
     }
@@ -84,23 +94,23 @@ class ScheduleViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return serviceRequests.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FUITimelineCell.reuseIdentifier, for: indexPath)
         guard let timelineCell = cell as? FUITimelineCell else { return cell }
-        //        let object = objects[indexPath.row]
+        let request = serviceRequests[indexPath.row]
         timelineCell.timelineWidth = CGFloat(70.0)
-        timelineCell.headlineText = "Headline"// ticket.title
-        timelineCell.subheadlineText = "id: 1234" //ticket.productid
+        timelineCell.headlineText = request.title ?? ""
+        timelineCell.subheadlineText = request.company.name //ticket.productid
         timelineCell.nodeImage = FUITimelineNode.open
         timelineCell.eventText =  "10:00 AM"
         timelineCell.eventImage =  #imageLiteral(resourceName: "Pin_2") // TODO: Replace with your image
         timelineCell.eventImageView.tintColor = UIColor.preferredFioriColor(forStyle: .tintColorDark)
         timelineCell.statusImage = UIImage() // TODO: Replace with your image
-        timelineCell.subStatusText =  "Rainy"
-        timelineCell.attributeText =  "1h 30 min"
+        timelineCell.subStatusText =  "rainy"
+        timelineCell.attributeText =  request.device.name // "1h 30 min"
         timelineCell.subAttributeText =  "8 min (2.4 min)"
         return timelineCell
     }
@@ -116,7 +126,8 @@ class ScheduleViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
+            mapViewController?.removeAnnotation(request: serviceRequests[indexPath.row])
+            serviceRequests.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -134,6 +145,10 @@ extension ScheduleViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSour
     
     func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
         return NSAttributedString(string: "¯\\_(ツ)_/¯")
+    }
+    
+    func emptyDataSetDidTapEmptyView(in scrollView: UIScrollView) {
+        generateServiceRequests()
     }
     
     func emptyDataSetWillAppear(in scrollView: UIScrollView) {

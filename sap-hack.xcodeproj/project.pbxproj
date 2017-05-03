@@ -16,7 +16,7 @@
 		63C2C6B11EB8FE100029A085 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AF1EB8FE100029A085 /* RequestsViewController.swift */; };
 		63C2C6B71EB8FE280029A085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B31EB8FE280029A085 /* LaunchScreen.storyboard */; };
 		63C2C6B81EB8FE280029A085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6B51EB8FE280029A085 /* Main.storyboard */; };
-		C313E4FE1EB9032D00DE4174 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E4FD1EB9032D00DE4174 /* Order.swift */; };
+		C313E4FE1EB9032D00DE4174 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E4FD1EB9032D00DE4174 /* ServiceRequest.swift */; };
 		C313E5001EB903C900DE4174 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E4FF1EB903C900DE4174 /* Device.swift */; };
 		C313E5021EB905CF00DE4174 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E5011EB905CF00DE4174 /* Company.swift */; };
 		C313E5041EB9073700DE4174 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C313E5031EB9073700DE4174 /* Event.swift */; };
@@ -63,7 +63,7 @@
 		63C2C6B61EB8FE280029A085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Controllers/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		63C2C6B91EB8FE340029A085 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
 		6B7091CFE68F4E0A2F14BEC9 /* Pods-sap-hack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sap-hack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sap-hack/Pods-sap-hack.debug.xcconfig"; sourceTree = "<group>"; };
-		C313E4FD1EB9032D00DE4174 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = Sources/Models/Order.swift; sourceTree = SOURCE_ROOT; };
+		C313E4FD1EB9032D00DE4174 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = Sources/Models/ServiceRequest.swift; sourceTree = SOURCE_ROOT; };
 		C313E4FF1EB903C900DE4174 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Sources/Models/Device.swift; sourceTree = SOURCE_ROOT; };
 		C313E5011EB905CF00DE4174 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Company.swift; path = Sources/Models/Company.swift; sourceTree = SOURCE_ROOT; };
 		C313E5031EB9073700DE4174 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Sources/Models/Event.swift; sourceTree = SOURCE_ROOT; };
@@ -152,7 +152,7 @@
 		63C2C6BB1EB8FE770029A085 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C313E4FD1EB9032D00DE4174 /* Order.swift */,
+				C313E4FD1EB9032D00DE4174 /* ServiceRequest.swift */,
 				C313E5221EB91E2F00DE4174 /* KPI.swift */,
 				C313E5031EB9073700DE4174 /* Event.swift */,
 				C313E5011EB905CF00DE4174 /* Company.swift */,
@@ -315,7 +315,7 @@
 				C3C83E1B1EB949D1003D6825 /* KPIHeaderTableViewCell.swift in Sources */,
 				C3C83E1D1EB95042003D6825 /* FuryKPIHeaderCell.swift in Sources */,
 				63C2C6AD1EB8FE080029A085 /* AppDelegate.swift in Sources */,
-				C313E4FE1EB9032D00DE4174 /* Order.swift in Sources */,
+				C313E4FE1EB9032D00DE4174 /* ServiceRequest.swift in Sources */,
 				637790371EB92093001E2944 /* ScheduleViewController.swift in Sources */,
 				63C2C6B11EB8FE100029A085 /* RequestsViewController.swift in Sources */,
 				C313E5001EB903C900DE4174 /* Device.swift in Sources */,

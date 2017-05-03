@@ -12,11 +12,12 @@ import TBEmptyDataSet
 
 class RequestDetailsViewController: UITableViewController {
 
-    var order: Order!
+    var order: ServiceRequest!
     
     enum cellTypes: String {
         case kpiHeader
     }
+    var serviceRequests = [ServiceRequest]()
     
     
     @IBOutlet var kpiHeader: KPIHeaderTableViewCell!
@@ -29,6 +30,16 @@ class RequestDetailsViewController: UITableViewController {
     
     @IBAction func dismiss() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Table View
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return serviceRequests.count
     }
     
 }
