@@ -22,6 +22,8 @@ class RequestsViewController: UITableViewController {
         tableView.emptyDataSetDataSource = self
         tableView.emptyDataSetDelegate = self
         
+        tableView.backgroundColor = UIColor.preferredFioriColor(forStyle: .backgroundBase)
+        
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
@@ -91,6 +93,7 @@ class RequestsViewController: UITableViewController {
         tableViewCell.subheadlineText = "Subheadline"
         tableViewCell.descriptionText = "Description"
         tableViewCell.footnoteText = "Footnote"
+        tableView.backgroundColor = UIColor.preferredFioriColor(forStyle: .backgroundBase)
 //        tableViewCell.substatusImage = #imageLiteral(resourceName: "Warning")
         tableViewCell.substatusImage = #imageLiteral(resourceName: "Alert")
 //        tableViewCell.substatusImageView.tintColor = UIColor.preferredFioriColor(forStyle: .critical)
