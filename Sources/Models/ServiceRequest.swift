@@ -47,8 +47,9 @@ extension ServiceRequest: Sampled {
             "Always too loud"
             ].shuffled(using: &Xoroshiro.threadLocal.pointee)
         return (0..<amount).map { i in
-            let request = ServiceRequest(title: titles[i % titles.count], device: Device.generateSample(), creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample(), requester: Person.generateSample())
-            request.events = Event.generateSamples(amount: 3)
+            let device = Device.generateSample()
+            let request = ServiceRequest(title: titles[i % titles.count], device: device, creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample(), requester: Person.generateSample())
+            request.events = Event.conversation(about: device)
             return request
         }
     }

@@ -27,10 +27,13 @@ class TimelineCollectionViewCell: UICollectionViewCell {
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
         dateLabel.text = dateFormatter.string(from: event.date)
         
+        let formattedString = NSMutableAttributedString()
         switch(event.type) {
         case .comment(let person, let comment):
             icon.image = FUITimelineNode.open
-            titleLabel.text = "\(person.name) commented"
+            titleLabel.attributedText = formattedString
+                .bold(person.name)
+                .normal(" commented")
             loadPortrait(locatedAt: person.image)
             contentLabel.text = comment
             contentLabel.isHidden = false
@@ -38,16 +41,14 @@ class TimelineCollectionViewCell: UICollectionViewCell {
             icon.image = FUITimelineNode.complete
             contentLabel.isHidden = true
            loadPortrait(locatedAt: person.image)
-            let bold = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15)]
-            let firstPart = NSMutableAttributedString(string: person.name, attributes: bold)
-            let secondPart = NSMutableAttributedString(string: " self-assigned this.")
-            firstPart.append(secondPart)
-            titleLabel.attributedText = firstPart
+            titleLabel.attributedText = formattedString
+                .bold(person.name)
+                .normal(" self-assigned this")
         case .telemetry(let device, let message):
-            let formattedString = NSMutableAttributedString()
             titleLabel.attributedText = formattedString
                 .bold(device.name)
-            .normal(" has uploaded diagnostic information.")
+                .normal(" has uploaded telemetry")
+            loadPortrait(locatedAt: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/2_komponenten_einfachdosierer_auf_portal.jpg/800px-2_komponenten_einfachdosierer_auf_portal.jpg")
             contentLabel.text = message
         default:
             contentLabel.isHidden = true

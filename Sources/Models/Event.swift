@@ -26,7 +26,7 @@ extension Event {
     static func conversation(about device: Device) -> [T] {
         let people = Person.generateSamples(amount: 3)
         let elements = [
-            Event(type: .telemetry(device, "The device has uploaded diagnostic data."), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
+            Event(type: .telemetry(device, "Status: \(device.kpi[0].key) is \(device.kpi[0].value)"), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
             Event(type: .comment(people[0], "I think we need to order some replacement materials before we can work on this."), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
             Event(type: .assignment(people[0]), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
             Event(type: .comment(people[1], "I found I found the right replacement parts in our inventory! I'll check with \(people[2].name)."), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
