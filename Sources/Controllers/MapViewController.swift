@@ -76,7 +76,7 @@ extension MapViewController: MKMapViewDelegate {
         let reuseId = "standardPin"
         let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         
-        if let request = serviceRequests[annotation as! MKPointAnnotation] {
+        if let pointAnnotation = annotation as? MKPointAnnotation, let request = serviceRequests[pointAnnotation] {
             annotationView.pinTintColor = request.isScheduled ? .red : .purple
         }
         
