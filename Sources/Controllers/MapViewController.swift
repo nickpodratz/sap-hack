@@ -31,8 +31,9 @@ class MapViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        zoomToPlacemarks()
+        if self.isBeingDismissed || self.isMovingFromParentViewController {
+            zoomToPlacemarks()
+        }
     }
     
     func zoomToPlacemarks() {
