@@ -152,7 +152,7 @@
                                             <outlet property="collectionView" destination="3zn-Uf-fkC" id="4sj-oa-7Dh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="176" id="2Vu-jz-NoJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="176" id="2Vu-jz-NoJ">
                                         <rect key="frame" x="0.0" y="114" width="375" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Vu-jz-NoJ" id="gbq-NQ-fkq">
@@ -194,6 +194,7 @@
                                                 <constraint firstItem="v7n-ZQ-8Ad" firstAttribute="centerX" secondItem="gbq-NQ-fkq" secondAttribute="centerX" id="ucL-CJ-JyS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.96868990384615383" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventsView" rowHeight="176" id="8IT-vc-ID7">
                                         <rect key="frame" x="0.0" y="290" width="375" height="176"/>
