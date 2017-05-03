@@ -250,14 +250,14 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNA-Rp-LWf">
-                                                                        <rect key="frame" x="51" y="12" width="345" height="1"/>
+                                                                        <rect key="frame" x="64" y="12" width="336" height="1"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="1ay-IE-7ur"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin_2" translatesAutoresizingMaskIntoConstraints="NO" id="7G8-FP-0EU">
-                                                                        <rect key="frame" x="20" y="4" width="25" height="20"/>
+                                                                        <rect key="frame" x="4" y="4" width="56" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="uXc-5y-E5g"/>
                                                                         </constraints>
@@ -305,9 +305,9 @@
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByW-hX-fGf">
-                                                                        <rect key="frame" x="8" y="96" width="384" height="64"/>
-                                                                        <string key="text">Information for non-text media contributors Non-text media on Wikimedia Foundation Licensing Policy. Individual communities may elaborate upon and refine these requirements. Information for re-users You can apply it to the credit given on this website, or c) through a medium customarily used for software interchange; or, b) Accompany it with a client other than Lic ensor has the right to change the name of the original copyright holder who places the Program or works made available as described in the LEGAL file in all copies and that you duplicate all of the changes made to Python.</string>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByW-hX-fGf">
+                                                                        <rect key="frame" x="8" y="96" width="384" height="80"/>
+                                                                        <mutableString key="text">Information for non-text media contributors Non-text media on Wikimedia Foundation Licensing Policy. Individual communities may elaborate upon and refine these requirements. Information for re-users You can apply it to the credit given on this website, or c) through a medium customarily used for software interchange; or, b) Accompany it with a client other than Lic ensor has the right to change the name of the original copyright holder who places the Program or works made available as described in the LEGAL file in all copies and that you duplicate all of the changes made to Python.</mutableString>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -320,19 +320,20 @@
                                                                 <constraint firstItem="h9x-5U-fet" firstAttribute="leading" secondItem="qCm-HV-WP2" secondAttribute="leading" id="AQi-2q-BeC"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="56b-Fo-n2p" secondAttribute="trailing" id="DJB-Bt-WtD"/>
                                                                 <constraint firstItem="HyW-PL-a5B" firstAttribute="leading" secondItem="qCm-HV-WP2" secondAttribute="leadingMargin" id="De4-FV-X6j"/>
-                                                                <constraint firstItem="mNA-Rp-LWf" firstAttribute="leading" secondItem="7G8-FP-0EU" secondAttribute="trailing" constant="6" id="GpI-KW-KJ7"/>
+                                                                <constraint firstItem="mNA-Rp-LWf" firstAttribute="leading" secondItem="7G8-FP-0EU" secondAttribute="trailing" constant="4" id="GpI-KW-KJ7"/>
                                                                 <constraint firstItem="GAz-NT-rY3" firstAttribute="trailing" secondItem="56b-Fo-n2p" secondAttribute="trailing" id="O0d-CJ-Got"/>
                                                                 <constraint firstItem="HyW-PL-a5B" firstAttribute="top" secondItem="7G8-FP-0EU" secondAttribute="bottom" constant="16" id="W4J-o4-tPx"/>
                                                                 <constraint firstItem="7G8-FP-0EU" firstAttribute="top" secondItem="qCm-HV-WP2" secondAttribute="top" constant="4" id="XaM-8s-9G3"/>
                                                                 <constraint firstItem="h9x-5U-fet" firstAttribute="top" secondItem="qCm-HV-WP2" secondAttribute="top" constant="10" id="XuB-iO-g9g"/>
                                                                 <constraint firstItem="GAz-NT-rY3" firstAttribute="leading" secondItem="56b-Fo-n2p" secondAttribute="leading" id="aND-oq-vdN"/>
                                                                 <constraint firstItem="ByW-hX-fGf" firstAttribute="leading" secondItem="qCm-HV-WP2" secondAttribute="leadingMargin" id="cbJ-DT-3ra"/>
+                                                                <constraint firstItem="7G8-FP-0EU" firstAttribute="leading" secondItem="h9x-5U-fet" secondAttribute="trailing" constant="4" id="fJg-oX-2U8"/>
                                                                 <constraint firstItem="7G8-FP-0EU" firstAttribute="centerX" secondItem="HyW-PL-a5B" secondAttribute="centerX" id="fef-cO-ei9"/>
                                                                 <constraint firstItem="ByW-hX-fGf" firstAttribute="top" secondItem="HyW-PL-a5B" secondAttribute="bottom" constant="8" id="i7i-gM-qod"/>
                                                                 <constraint firstItem="mNA-Rp-LWf" firstAttribute="top" secondItem="qCm-HV-WP2" secondAttribute="top" constant="12" id="niU-EB-sZx"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="ByW-hX-fGf" secondAttribute="bottom" constant="8" id="qBF-Yw-G4D"/>
                                                                 <constraint firstAttribute="trailingMargin" secondItem="ByW-hX-fGf" secondAttribute="trailing" id="tEJ-ZM-DWk"/>
-                                                                <constraint firstAttribute="trailing" secondItem="mNA-Rp-LWf" secondAttribute="trailing" constant="4" id="uZd-QN-e4p"/>
+                                                                <constraint firstAttribute="trailing" secondItem="mNA-Rp-LWf" secondAttribute="trailing" id="uZd-QN-e4p"/>
                                                                 <constraint firstItem="HyW-PL-a5B" firstAttribute="centerY" secondItem="56b-Fo-n2p" secondAttribute="centerY" constant="10" id="zAn-6h-NbS"/>
                                                             </constraints>
                                                             <size key="customSize" width="400" height="175.5"/>
