@@ -22,16 +22,18 @@ class ServiceRequest: NSObject {
     let creationDate: Date
     let company: Company
     var isScheduled: Bool
+    let requester: Person
     
     var dueDate: Date? = nil
     var events = [Event]()
     
-    public init(title: String, device: Device, creationDate: Date = Date(), company: Company, isScheduled: Bool = false) {
+    public init(title: String, device: Device, creationDate: Date = Date(), company: Company, isScheduled: Bool = false, requester: Person) {
         self.title = title
         self.device = device
         self.creationDate = creationDate
         self.company = company
         self.isScheduled = isScheduled
+        self.requester = requester
     }
 }
 
@@ -45,7 +47,9 @@ extension ServiceRequest: Sampled {
             "Always too loud"
             ].shuffled(using: &Xoroshiro.threadLocal.pointee)
         return (0..<amount).map { i in
-            return ServiceRequest(title: titles[i % titles.count], device: Device.generateSample(), creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample())
+            let request = ServiceRequest(title: titles[i % titles.count], device: Device.generateSample(), creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample(), requester: Person.generateSample())
+            request.events = Event.generateSamples(amount: 3)
+            return request
         }
     }
     

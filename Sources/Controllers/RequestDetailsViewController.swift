@@ -27,12 +27,14 @@ class RequestDetailsViewController: UITableViewController {
             let shadowView = shadowImageViewInNavigationBar(view: navBar)
             shadowView?.layer.isHidden = true
         }
+        eventsCollectionView.dataSource = self
     }
     
     @IBAction func dismiss() {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet var eventsCollectionView: UICollectionView!
 }
 
 // MARK: : TBEmptyDataSetDelegate, TBEmptyDataSetDataSource
@@ -76,4 +78,18 @@ private func shadowImageViewInNavigationBar(view: UIView) -> UIImageView? {
     }
     return nil
 }
+extension RequestDetailsViewController: UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return serviceRequest.events.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath) as! TimelineCollectionViewCell
+        let event = serviceRequest.events[indexPath.row]
+        cell.set(event: event)
+        cell.set(position: indexPath.row, forTotal: serviceRequest.events.count)
+        return cell
+    }
+}
+
 

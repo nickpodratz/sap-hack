@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Sources/Controllers/EventsOverviewTableViewCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:sap-hack.xcodeproj">
    </FileRef>
    <FileRef
