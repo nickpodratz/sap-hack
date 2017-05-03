@@ -14,6 +14,8 @@ class MapViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     
+    let orders = Order.generateSamples(amount: 10)
+
     let berlinRegion = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: 52.5144, longitude: 13.4127), MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
 
     override func viewDidLoad() {
@@ -34,8 +36,6 @@ class MapViewController: UIViewController {
         zoomToPlacemarks()
     }
     
-    let orders = Order.sampleData
-
     func loadPlacemarks() {
         mapView.addOverlays(orders)
     }

@@ -13,7 +13,7 @@ import SAPFiori
 class RequestsViewController: UITableViewController {
 
     var detailViewController: MapViewController? = nil
-    var objects = [Any]()
+    var objects = [Order]()
 
 
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class RequestsViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
+        objects.insert(Order.generateSamples(amount: 1).first!, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.updateEmptyDataSetIfNeeded()
@@ -65,8 +65,8 @@ class RequestsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
-                let controller = (segue.destination as! UINavigationController).topViewController as! MapViewController
+                let order = objects[indexPath.row]
+                let controller = (segue.destination as! UINavigationController).topViewController as! RequestDetailsViewController
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
