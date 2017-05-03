@@ -12,6 +12,7 @@
 		637790371EB92093001E2944 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637790361EB92093001E2944 /* ScheduleViewController.swift */; };
 		637790391EB92CBB001E2944 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637790381EB92CBB001E2944 /* MapViewController.swift */; };
 		6377903B1EB93C52001E2944 /* RequestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377903A1EB93C52001E2944 /* RequestDetailsViewController.swift */; };
+		637790451EBA0921001E2944 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637790441EBA0921001E2944 /* RoundedView.swift */; };
 		63C2C6AB1EB8FDF30029A085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C2C6AA1EB8FDF30029A085 /* Assets.xcassets */; };
 		63C2C6AD1EB8FE080029A085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AC1EB8FE080029A085 /* AppDelegate.swift */; };
 		63C2C6B11EB8FE100029A085 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2C6AF1EB8FE100029A085 /* RequestsViewController.swift */; };
@@ -60,6 +61,7 @@
 		637790361EB92093001E2944 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = Sources/Controllers/ScheduleViewController.swift; sourceTree = SOURCE_ROOT; };
 		637790381EB92CBB001E2944 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Sources/Controllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		6377903A1EB93C52001E2944 /* RequestDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestDetailsViewController.swift; path = Sources/Controllers/RequestDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		637790441EBA0921001E2944 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedView.swift; path = Sources/Views/RoundedView.swift; sourceTree = SOURCE_ROOT; };
 		63A17CA61EB8F5A800600C34 /* sap-hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sap-hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C2C6AA1EB8FDF30029A085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		63C2C6AC1EB8FE080029A085 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/Controllers/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -180,6 +182,7 @@
 				C313E5261EB9302A00DE4174 /* MapCallout.xib */,
 				C3C83E1C1EB95042003D6825 /* FuryKPIHeaderCell.swift */,
 				C36F5E1D1EB9AFBC002B0614 /* TimelineCollectionViewCell.swift */,
+				637790441EBA0921001E2944 /* RoundedView.swift */,
 			);
 			name = Views;
 			path = Sources/Views;
@@ -323,6 +326,7 @@
 			files = (
 				6377903B1EB93C52001E2944 /* RequestDetailsViewController.swift in Sources */,
 				637790391EB92CBB001E2944 /* MapViewController.swift in Sources */,
+				637790451EBA0921001E2944 /* RoundedView.swift in Sources */,
 				C36F5E1E1EB9AFBC002B0614 /* TimelineCollectionViewCell.swift in Sources */,
 				C313E5241EB91E2F00DE4174 /* KPI.swift in Sources */,
 				C3C83E1B1EB949D1003D6825 /* KPIHeaderTableViewCell.swift in Sources */,

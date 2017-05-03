@@ -51,7 +51,10 @@ extension ServiceRequest: Sampled {
             ].shuffled(using: &Xoroshiro.threadLocal.pointee)
         return (0..<amount).map { i in
             let device = Device.generateSample()
-            let request = ServiceRequest(title: titles[i % titles.count], device: device, creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample(), requester: Person.generateSample())
+            let today = Date()
+            let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)
+            let creationDate = Date.random(within: today...tomorrow!, using: &Xoroshiro.threadLocal.pointee)
+            let request = ServiceRequest(title: titles[i % titles.count], device: device, creationDate: creationDate, company: Company.generateSample(), requester: Person.generateSample())
             request.events = Event.conversation(about: device)
             request.dueDate = Date().addingTimeInterval(Double.random(within: 120...20000,using: &Xoroshiro.threadLocal.pointee))
             return request

@@ -14,7 +14,7 @@ import RandomKit
 class ScheduleViewController: UITableViewController {
 
     var mapViewController: MapViewController? = nil
-    var serviceRequests = [ServiceRequest]()
+    var serviceRequests = ServiceRequest.generateSamples(amount: 5).sorted(by: { $0.creationDate < $1.creationDate })
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,7 +112,7 @@ class ScheduleViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: FUITimelineCell.reuseIdentifier, for: indexPath)
         guard let timelineCell = cell as? FUITimelineCell else { return cell }
         let request = serviceRequests[indexPath.row]
-        timelineCell.timelineWidth = CGFloat(70.0)
+        timelineCell.timelineWidth = CGFloat(66)
         timelineCell.headlineText = request.title ?? ""
         timelineCell.subheadlineText = request.company.name //ticket.productid
         timelineCell.nodeImage = FUITimelineNode.open
