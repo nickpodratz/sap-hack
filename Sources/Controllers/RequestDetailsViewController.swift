@@ -23,6 +23,10 @@ class RequestDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         kpiHeader.device = serviceRequest.device
+        if let navBar = self.navigationController?.navigationBar {
+            let shadowView = shadowImageViewInNavigationBar(view: navBar)
+            shadowView?.layer.isHidden = true
+        }
     }
     
     @IBAction func dismiss() {
@@ -59,4 +63,17 @@ extension RequestDetailsViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDa
     }
 }
 
+private func shadowImageViewInNavigationBar(view: UIView) -> UIImageView? {
+    if view is UIImageView && view.bounds.height <= 1.0 {
+        return (view as! UIImageView)
+    }
+    
+    let subviews = (view.subviews as [UIView])
+    for subview: UIView in subviews {
+        if let imageView: UIImageView = shadowImageViewInNavigationBar(view: subview) {
+            return imageView
+        }
+    }
+    return nil
+}
 
