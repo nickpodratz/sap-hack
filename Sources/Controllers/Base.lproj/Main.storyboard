@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -81,6 +80,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.26690217849999998" green="0.36714249850000003" blue="0.458716929" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="L2m-gz-nMz">
                                 <cells>
@@ -152,22 +152,22 @@
                                             <outlet property="collectionView" destination="3zn-Uf-fkC" id="4sj-oa-7Dh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="176" id="2Vu-jz-NoJ">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="176"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="224" id="2Vu-jz-NoJ">
+                                        <rect key="frame" x="0.0" y="114" width="375" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Vu-jz-NoJ" id="gbq-NQ-fkq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="223.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7n-ZQ-8Ad">
-                                                    <rect key="frame" x="142.5" y="12" width="90" height="90"/>
+                                                    <rect key="frame" x="142.5" y="16" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="8SI-aZ-EKQ"/>
                                                         <constraint firstAttribute="height" constant="90" id="O5t-U8-BTm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAP SE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVw-fS-rui">
-                                                    <rect key="frame" x="8" y="146" width="359" height="25.5"/>
+                                                    <rect key="frame" x="8" y="148" width="359" height="19.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -181,23 +181,52 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Had-pv-iot" customClass="RoundedButton" customModule="sap_hack" customModuleProvider="target">
+                                                    <rect key="frame" x="131.5" y="179.5" width="112" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26" id="8yT-Qu-S7i"/>
+                                                        <constraint firstAttribute="width" constant="112" id="PT6-fF-jxv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <state key="normal" title="Get in Touch">
+                                                        <color key="titleColor" red="0.26697170734405518" green="0.36830705404281616" blue="0.46032625436782837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="11"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.26697170734405518" green="0.36830705404281616" blue="0.46032625436782837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="L0F-8H-cJN" kind="presentation" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="HmD-2V-Yr5"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Kg0-Lt-xLy" secondAttribute="trailing" constant="8" id="1R3-AQ-Lwy"/>
                                                 <constraint firstItem="hVw-fS-rui" firstAttribute="leading" secondItem="gbq-NQ-fkq" secondAttribute="leading" constant="8" id="2a2-2z-U03"/>
                                                 <constraint firstAttribute="trailing" secondItem="hVw-fS-rui" secondAttribute="trailing" constant="8" id="3l5-sI-Swn"/>
                                                 <constraint firstItem="Kg0-Lt-xLy" firstAttribute="leading" secondItem="gbq-NQ-fkq" secondAttribute="leading" constant="8" id="NbC-Z4-iqR"/>
-                                                <constraint firstItem="Kg0-Lt-xLy" firstAttribute="top" secondItem="v7n-ZQ-8Ad" secondAttribute="bottom" constant="12" id="OQM-Ia-LKI"/>
-                                                <constraint firstItem="hVw-fS-rui" firstAttribute="top" secondItem="Kg0-Lt-xLy" secondAttribute="bottom" id="WOe-dv-Twl"/>
-                                                <constraint firstItem="v7n-ZQ-8Ad" firstAttribute="top" secondItem="gbq-NQ-fkq" secondAttribute="top" constant="12" id="XNo-eJ-is7"/>
-                                                <constraint firstAttribute="bottom" secondItem="hVw-fS-rui" secondAttribute="bottom" constant="4" id="uQX-P9-YAE"/>
+                                                <constraint firstItem="Kg0-Lt-xLy" firstAttribute="top" secondItem="v7n-ZQ-8Ad" secondAttribute="bottom" constant="8" id="OQM-Ia-LKI"/>
+                                                <constraint firstItem="hVw-fS-rui" firstAttribute="top" secondItem="Kg0-Lt-xLy" secondAttribute="bottom" constant="2" id="WOe-dv-Twl"/>
+                                                <constraint firstItem="v7n-ZQ-8Ad" firstAttribute="top" secondItem="gbq-NQ-fkq" secondAttribute="top" constant="16" id="XNo-eJ-is7"/>
+                                                <constraint firstItem="Had-pv-iot" firstAttribute="top" secondItem="hVw-fS-rui" secondAttribute="bottom" constant="12" id="XdL-VX-Uro"/>
+                                                <constraint firstItem="Had-pv-iot" firstAttribute="centerX" secondItem="hVw-fS-rui" secondAttribute="centerX" id="gux-4v-DI0"/>
                                                 <constraint firstItem="v7n-ZQ-8Ad" firstAttribute="centerX" secondItem="gbq-NQ-fkq" secondAttribute="centerX" id="ucL-CJ-JyS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.96868990384615383" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventsView" rowHeight="176" id="8IT-vc-ID7">
-                                        <rect key="frame" x="0.0" y="290" width="375" height="176"/>
+                                        <rect key="frame" x="0.0" y="338" width="375" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8IT-vc-ID7" id="evV-Hb-Ayc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
@@ -340,18 +369,11 @@
                         <barButtonItem title="Item" id="EWC-Qy-tYp" customClass="CustomBarButtonItem" customModule="sap_hack" customModuleProvider="target"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Service Request Details" id="eTc-jq-zzR">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="done" id="eVX-nP-8k7">
-                                <connections>
-                                    <action selector="dismiss" destination="reQ-st-9MN" id="EC0-qo-2wg"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="reply" id="DwZ-vp-wiB">
-                                <connections>
-                                    <segue destination="L0F-8H-cJN" kind="presentation" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="aom-GJ-i06"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="eVX-nP-8k7">
+                            <connections>
+                                <action selector="dismiss" destination="reQ-st-9MN" id="EC0-qo-2wg"/>
+                            </connections>
+                        </barButtonItem>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="gutterWidth" value="0"/>
                         </userDefinedRuntimeAttributes>
