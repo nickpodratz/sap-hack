@@ -68,7 +68,7 @@ class ScheduleViewController: UITableViewController {
     }
 
     fileprivate func generateServiceRequests() {
-        let newAnnotations = ServiceRequest.generateSamples(amount: 15)
+        let newAnnotations = ServiceRequest.generateSamples(amount: 15).sorted(by: { $0.creationDate < $1.creationDate })
         for newAnnotation in newAnnotations {
             newAnnotation.isScheduled = true
         }
@@ -105,11 +105,15 @@ class ScheduleViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: FUITimelineCell.reuseIdentifier, for: indexPath)
         guard let timelineCell = cell as? FUITimelineCell else { return cell }
         let request = serviceRequests[indexPath.row]
-        timelineCell.timelineWidth = CGFloat(70.0)
+        timelineCell.timelineWidth = CGFloat(66)
         timelineCell.headlineText = request.title ?? ""
         timelineCell.subheadlineText = request.company.name //ticket.productid
         timelineCell.nodeImage = FUITimelineNode.open
-        timelineCell.eventText =  "10:00 AM"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+
+        timelineCell.eventText =  dateFormatter.string(from: request.creationDate) // "10:00 AM"
         timelineCell.eventImage =  #imageLiteral(resourceName: "Pin_2") // TODO: Replace with your image
         timelineCell.eventImageView.tintColor = UIColor.preferredFioriColor(forStyle: .tintColorDark)
         timelineCell.statusImage = UIImage() // TODO: Replace with your image
