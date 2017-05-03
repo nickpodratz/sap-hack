@@ -49,7 +49,7 @@ class MapViewController: UIViewController {
         let annotation = MKPointAnnotation()
         annotation.coordinate = request.company.location
         serviceRequests[annotation] = request
-        mapView.addAnnotation(annotation)
+        mapView?.addAnnotation(annotation)
     }
     
     func removeAnnotation(request: ServiceRequest) {
