@@ -25,7 +25,7 @@ class KPIHeaderTableViewCell: UITableViewCell {
 
 }
 
-extension KPIHeaderTableViewCell: UICollectionViewDataSource {
+extension KPIHeaderTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return device.kpi.count
     }
@@ -37,4 +37,17 @@ extension KPIHeaderTableViewCell: UICollectionViewDataSource {
         
         return cell
     }
+    
+    
+    public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        
+        let totalCellWidth = 156 * device.kpi.count
+        let totalSpacingWidth = 10 * (device.kpi.count - 1)
+        
+        let leftInset = (collectionView.frame.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        let rightInset = leftInset
+        
+        return UIEdgeInsetsMake(0, leftInset, 0, rightInset)
+    }
+ 
 }
