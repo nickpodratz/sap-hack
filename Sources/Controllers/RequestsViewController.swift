@@ -56,6 +56,8 @@ class RequestsViewController: UITableViewController {
     
     @IBAction func refreshView(_ sender: Any) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.serviceRequests = ServiceRequest.generateSamples(amount: 15)
+            self.tableView.reloadData()
             self.tableView.refreshControl?.endRefreshing()
         }
     }
