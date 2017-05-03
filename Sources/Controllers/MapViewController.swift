@@ -22,20 +22,9 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mapView.delegate = self
+        zoomToPlacemarks()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if self.isBeingDismissed || self.isMovingFromParentViewController {
-            zoomToPlacemarks()
-        }
-    }
-    
     func zoomToPlacemarks() {
         mapView.setRegion(berlinRegion, animated: false)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
