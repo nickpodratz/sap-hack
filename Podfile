@@ -8,5 +8,5 @@ target 'sap-hack' do
   pod 'RandomKit', :git => 'https://github.com/nvzqz/RandomKit.git'
   pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift', :branch => 'swift-3'
   # Pods for sap-hack
-
+  pod 'KBRoundedButton'
 end

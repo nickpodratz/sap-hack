@@ -1,5 +1,6 @@
 PODS:
   - HanekeSwift (0.10.1)
+  - KBRoundedButton (1.0.4)
   - RandomKit (4.5.2):
     - ShiftOperations
   - ShiftOperations (1.0.0)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - HanekeSwift (from `https://github.com/Haneke/HanekeSwift`, branch `swift-3`)
+  - KBRoundedButton
   - RandomKit (from `https://github.com/nvzqz/RandomKit.git`)
   - TBEmptyDataSet
 
@@ -27,10 +29,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   HanekeSwift: 4113367892828e7700d24a384027de6ebc79aad1
+  KBRoundedButton: 8fde755b8f1df3ddd3c3c280d9b27ce04ab55d00
   RandomKit: 6e7ad839c9b4277c20dc69bc94e047cdcabfd230
   ShiftOperations: 0c77c06851e7976c2665d601b46af123dbffeade
   TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
 
-PODFILE CHECKSUM: bc4193cb78d0060ca4b4238a3829a6d4be524bca
+PODFILE CHECKSUM: e1c614ee5699b1539def7983c2d99718f518914b
 
 COCOAPODS: 1.2.1

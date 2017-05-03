@@ -11,7 +11,6 @@ import UIKit
 import RandomKit
 
 struct Event {
-    let title: String
     let type: EventType
     let date: Date
 }
@@ -19,20 +18,21 @@ struct Event {
 enum EventType {
     case assignment(Person)
     case comment(Person, String)
+    case telemetry(Device, String)
 }
 
-extension Event: Sampled {
+extension Event {
     typealias T = Event
-    static func generateSamples(amount: Int) -> [T] {
+    static func conversation(about device: Device) -> [T] {
+        let people = Person.generateSamples(amount: 3)
         let elements = [
-            Event(title: "", type: .assignment(Person.generateSample()), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
-            Event(title: "", type: .comment(Person.generateSample(), "I don't think we should do this"), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
-            Event(title: "", type: .comment(Person.generateSample(), "Wow, great stuff!"), date: Date.random(using: &Xoroshiro.threadLocal.pointee))
-            ].shuffled(using: &Xoroshiro.threadLocal.pointee)
-        return (1...amount).map{ i in elements[i % elements.count] }
-    }
-    
-    static func generateSample() -> T {
-        return generateSamples(amount: 1).first!
+            Event(type: .telemetry(device, "The device has uploaded diagnostic data."), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
+            Event(type: .comment(people[0], "I think we need to order some replacement materials before we can work on this."), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
+            Event(type: .assignment(people[0]), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
+            Event(type: .comment(people[1], "I found I found the right replacement parts in our inventory! I'll check with \(people[2].name)."), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
+            Event(type: .comment(people[2], "Yes, that's alright."), date: Date.random(using: &Xoroshiro.threadLocal.pointee)),
+            Event(type: .comment(people[0], "Okay, all done here"), date: Date.random(using: &Xoroshiro.threadLocal.pointee))
+            ]
+        return elements
     }
 }

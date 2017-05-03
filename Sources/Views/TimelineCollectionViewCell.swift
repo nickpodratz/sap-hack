@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAPFiori
 
 class TimelineCollectionViewCell: UICollectionViewCell {
     @IBOutlet var leadingLine: UIView!
@@ -28,12 +29,13 @@ class TimelineCollectionViewCell: UICollectionViewCell {
         
         switch(event.type) {
         case .comment(let person, let comment):
+            icon.image = FUITimelineNode.open
             titleLabel.text = "\(person.name) commented"
             loadPortrait(locatedAt: person.image)
             contentLabel.text = comment
             contentLabel.isHidden = false
         case .assignment(let person):
-            icon.image = #imageLiteral(resourceName: "Inbox")
+            icon.image = FUITimelineNode.complete
             contentLabel.isHidden = true
            loadPortrait(locatedAt: person.image)
             let bold = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15)]
@@ -41,6 +43,12 @@ class TimelineCollectionViewCell: UICollectionViewCell {
             let secondPart = NSMutableAttributedString(string: " self-assigned this.")
             firstPart.append(secondPart)
             titleLabel.attributedText = firstPart
+        case .telemetry(let device, let message):
+            let formattedString = NSMutableAttributedString()
+            titleLabel.attributedText = formattedString
+                .bold(device.name)
+            .normal(" has uploaded diagnostic information.")
+            contentLabel.text = message
         default:
             contentLabel.isHidden = true
         }

@@ -9,6 +9,7 @@
 import UIKit
 import SAPFiori
 import TBEmptyDataSet
+import KBRoundedButton
 
 class RequestDetailsViewController: UITableViewController {
 
@@ -33,6 +34,23 @@ class RequestDetailsViewController: UITableViewController {
         loadPortrait(locatedAt: serviceRequest.requester.image)
         requesterNameLabel.text = serviceRequest.requester.name
         requesterCompanyLabel.text = serviceRequest.company.name
+        
+        if let nav = navigationController {
+            nav.toolbar.frame = CGRect(x: nav.toolbar.frame.origin.x, y: nav.toolbar.frame.origin.y, width: nav.toolbar.frame.width, height: 100)
+        }
+        let acceptButton = KBRoundedButton(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
+        acceptButton.setTitle("Self-assign this service request", for: .normal)
+        acceptButton.setTitleColor(UIColor.white, for: .normal)
+        acceptButton.backgroundColorForStateNormal = UIColor.preferredFioriColor(forStyle: .tintColorDark)
+        acceptButton.setTitleColor(UIColor.preferredFioriColor(forStyle: .primary3), for: .selected)
+        acceptButton.addTarget(self, action: #selector(RequestDetailsViewController.acceptButtonPressed), for: UIControlEvents.touchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: acceptButton)
+        //let barButtonItem = UIBarButtonItem(title: "Accept", style: .bordered, target: nil, action: nil)
+        self.setToolbarItems([barButtonItem], animated: true)
+    }
+    
+    func acceptButtonPressed() {
+        print("ACCEPTED!")
     }
     
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
