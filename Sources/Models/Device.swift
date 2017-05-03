@@ -19,7 +19,7 @@ extension Device: Sampled {
     static func generateSamples(amount: Int) -> [Device] {
         let machines = ["Machinero 5000", "Suriname20k", "Itaro30", "Musakumo 16", "L19", "Karu", "Maduro", "Kalinga"].shuffled(using: &Xoroshiro.threadLocal.pointee)
         return (0..<amount).map{ i in
-            return Device(name: machines[i % machines.count], kpi: KPI.generateSamples(amount: 1))
+            return Device(name: machines[i % machines.count], kpi: KPI.generateSamples(amount: 5))
         }
     }
     

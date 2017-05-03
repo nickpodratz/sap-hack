@@ -17,17 +17,25 @@ struct KPI {
 
 extension KPI: Sampled {
     typealias T = KPI
+    
+    func formatNumber (number: Double) -> String? {
+        
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        
+        let formattedNumberString = formatter.string(from: NSNumber(value: number))
+        return formattedNumberString?.replacingOccurrences(of: ".00", with: "")
+    }
+    
     static func generateSamples(amount: Int) -> [KPI] {
+        var randomGenerator = Xoroshiro.threadLocal.pointee
+        //let energy = formatNumber(NSNumber.random(within: 0.5...100, using: &randomGenerator))
         let elements = [
-            KPI(key: "Running Duration", value: "16h", status: .normal),
-            KPI(key: "Running Duration", value: "11h", status: .normal),
-            KPI(key: "Running Duration", value: "23h", status: .normal),
-            KPI(key: "Temperature", value: "74˚C", status: .normal),
-            KPI(key: "Temperature", value: "126˚C", status: .warning),
-            KPI(key: "Workload", value: "26%", status: .normal),
-            KPI(key: "Workload", value: "51%", status: .normal),
-            KPI(key: "Workload", value: "84%", status: .normal),
-            KPI(key: "Workload", value: "16h", status: .normal),
+            KPI(key: "Running Duration", value: "\(Int(NSNumber.random(within: 1...10000, using: &randomGenerator)))h", status: .normal),
+            KPI(key: "Temperature", value: "\(Int(NSNumber.random(within: 80...150, using: &randomGenerator)))˚C", status: .normal),
+            KPI(key: "Workload", value: "\(Int(NSNumber.random(using: &randomGenerator)))%", status: .normal),
+            KPI(key: "Pressure", value: "\(Int(NSNumber.random(within: 80...300, using: &randomGenerator)))psi", status: .normal),
+            KPI(key: "Energy consumption", value: "\(Int(NSNumber.random(within: 0.3...200, using: &randomGenerator)))kW", status: .normal)
             ].shuffled(using: &Xoroshiro.threadLocal.pointee)
         return (1...amount).map{ i in elements[i % elements.count] }
     }
