@@ -22,6 +22,7 @@ class RequestDetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         kpiHeader.device = serviceRequest.device
     }
     
@@ -30,6 +31,8 @@ class RequestDetailsViewController: UITableViewController {
     }
     
 }
+
+
 
 // MARK: : TBEmptyDataSetDelegate, TBEmptyDataSetDataSource
 extension RequestDetailsViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSource {
@@ -58,5 +61,7 @@ extension RequestDetailsViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDa
         return [12, 12]
     }
 }
+
+
 
 

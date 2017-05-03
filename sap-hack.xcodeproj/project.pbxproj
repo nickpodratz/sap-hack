@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B36ABC1EB9B43400798334 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B36ABB1EB9B43400798334 /* ChatViewController.swift */; };
 		2639D6DD4327AF491FAC3F17 /* Pods_sap_hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */; };
 		637790371EB92093001E2944 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637790361EB92093001E2944 /* ScheduleViewController.swift */; };
 		637790391EB92CBB001E2944 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637790381EB92CBB001E2944 /* MapViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04B36ABB1EB9B43400798334 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = SOURCE_ROOT; };
 		100E986F69DA22F89BC7C736 /* Pods_sap_hack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sap_hack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51B0A5DD361E54E54C6B41A3 /* Pods-sap-hack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sap-hack.release.xcconfig"; path = "Pods/Target Support Files/Pods-sap-hack/Pods-sap-hack.release.xcconfig"; sourceTree = "<group>"; };
 		637790361EB92093001E2944 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = Sources/Controllers/ScheduleViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -144,6 +146,7 @@
 				637790361EB92093001E2944 /* ScheduleViewController.swift */,
 				637790381EB92CBB001E2944 /* MapViewController.swift */,
 				C3C83E1A1EB949D1003D6825 /* KPIHeaderTableViewCell.swift */,
+				04B36ABB1EB9B43400798334 /* ChatViewController.swift */,
 			);
 			name = Controllers;
 			path = Sources/Controllers;
@@ -319,6 +322,7 @@
 				637790371EB92093001E2944 /* ScheduleViewController.swift in Sources */,
 				63C2C6B11EB8FE100029A085 /* RequestsViewController.swift in Sources */,
 				C313E5001EB903C900DE4174 /* Device.swift in Sources */,
+				04B36ABC1EB9B43400798334 /* ChatViewController.swift in Sources */,
 				C313E5041EB9073700DE4174 /* Event.swift in Sources */,
 				C313E5061EB907D500DE4174 /* Person.swift in Sources */,
 				C313E5021EB905CF00DE4174 /* Company.swift in Sources */,
