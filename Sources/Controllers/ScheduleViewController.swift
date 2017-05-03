@@ -158,10 +158,6 @@ extension ScheduleViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSour
         tableView.separatorStyle = .none
     }
     
-    func emptyDataSetDidDisappear(in scrollView: UIScrollView) {
-        tableView.separatorStyle = .singleLine
-    }
-    
     func verticalOffsetForEmptyDataSet(in scrollView: UIScrollView) -> CGFloat {
         let orientation = UIApplication.shared.statusBarOrientation
         return orientation.isPortrait ? -52 : -22
