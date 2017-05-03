@@ -28,14 +28,43 @@ class RequestDetailsViewController: UITableViewController {
             shadowView?.layer.isHidden = true
         }
         eventsCollectionView.dataSource = self
+        
+        loadPortrait(locatedAt: serviceRequest.requester.image)
+        requesterNameLabel.text = serviceRequest.requester.name
+        requesterCompanyLabel.text = serviceRequest.company.name
     }
+    
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+
     
     @IBAction func dismiss() {
         dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet var eventsCollectionView: UICollectionView!
+    
+    @IBOutlet var requesterImageView: UIImageView!
+    @IBOutlet var requesterNameLabel: UILabel!
+    @IBOutlet var requesterCompanyLabel: UILabel!
+    
+    private func loadPortrait(locatedAt urlString: String?) {
+        if let urlString = urlString,
+            let url = URL(string: urlString) {
+            appDelegate?.cache.fetch(URL: url).onSuccess { image in
+                if let data = NSData(contentsOf: url) {
+                    if let image = UIImage(data: data as Data) {
+                        self.requesterImageView.image = image
+                        self.requesterImageView.layer.cornerRadius = self.requesterImageView.bounds.width/2
+                        self.requesterImageView.clipsToBounds = true
+                    }
+                }
+            }
+        }
+    }
+    
 }
+
+
 
 // MARK: : TBEmptyDataSetDelegate, TBEmptyDataSetDataSource
 extension RequestDetailsViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSource {
