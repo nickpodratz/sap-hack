@@ -174,13 +174,7 @@
                             <outlet property="delegate" destination="reQ-st-9MN" id="Q1w-fL-Fb8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="eTc-jq-zzR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="jIG-h0-Bqf">
-                            <connections>
-                                <action selector="dismiss" destination="reQ-st-9MN" id="ALZ-wa-Zl8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="eTc-jq-zzR"/>
                     <connections>
                         <outlet property="kpiHeader" destination="0tz-WK-eE6" id="SCu-1v-fnc"/>
                     </connections>
@@ -267,7 +261,7 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="0XN-xS-O12"/>
+                        <segue destination="VD7-1P-ON7" kind="showDetail" identifier="toDetail" id="0XN-xS-O12"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -350,7 +344,7 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="XTR-8F-4l7"/>
+                        <segue destination="VD7-1P-ON7" kind="showDetail" identifier="toDetail" id="XTR-8F-4l7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33o-Bk-HWn" sceneMemberID="firstResponder"/>
@@ -416,7 +410,7 @@
         <image name="Schedule" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XTR-8F-4l7"/>
+        <segue reference="0XN-xS-O12"/>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>
