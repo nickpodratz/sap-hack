@@ -221,14 +221,14 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNA-Rp-LWf">
-                                                                        <rect key="frame" x="33" y="10" width="367" height="1"/>
+                                                                        <rect key="frame" x="48.5" y="10" width="351.5" height="1"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="1ay-IE-7ur"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin_2" translatesAutoresizingMaskIntoConstraints="NO" id="7G8-FP-0EU">
-                                                                        <rect key="frame" x="4" y="1" width="25" height="20"/>
+                                                                        <rect key="frame" x="20" y="2" width="25" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="uXc-5y-E5g"/>
                                                                         </constraints>
@@ -299,7 +299,7 @@
                                                                 <constraint firstItem="h9x-5U-fet" firstAttribute="top" secondItem="qCm-HV-WP2" secondAttribute="top" constant="10" id="XuB-iO-g9g"/>
                                                                 <constraint firstItem="GAz-NT-rY3" firstAttribute="leading" secondItem="56b-Fo-n2p" secondAttribute="leading" id="aND-oq-vdN"/>
                                                                 <constraint firstItem="ByW-hX-fGf" firstAttribute="leading" secondItem="qCm-HV-WP2" secondAttribute="leadingMargin" id="cbJ-DT-3ra"/>
-                                                                <constraint firstItem="7G8-FP-0EU" firstAttribute="leading" secondItem="h9x-5U-fet" secondAttribute="trailing" constant="4" id="fHF-tW-LTr"/>
+                                                                <constraint firstItem="7G8-FP-0EU" firstAttribute="centerX" secondItem="HyW-PL-a5B" secondAttribute="centerX" id="fef-cO-ei9"/>
                                                                 <constraint firstItem="ByW-hX-fGf" firstAttribute="top" secondItem="GAz-NT-rY3" secondAttribute="bottom" constant="8" id="h0L-cV-KyL"/>
                                                                 <constraint firstItem="ByW-hX-fGf" firstAttribute="top" secondItem="HyW-PL-a5B" secondAttribute="bottom" constant="8" id="i7i-gM-qod"/>
                                                                 <constraint firstItem="mNA-Rp-LWf" firstAttribute="top" secondItem="qCm-HV-WP2" secondAttribute="top" constant="10" id="niU-EB-sZx"/>
