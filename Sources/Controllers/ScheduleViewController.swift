@@ -13,7 +13,7 @@ import TBEmptyDataSet
 class ScheduleViewController: UITableViewController {
 
     var mapViewController: MapViewController? = nil
-    var serviceRequests = [ServiceRequest]()
+    var serviceRequests = ServiceRequest.generateSamples(amount: 5).sorted(by: { $0.creationDate < $1.creationDate })
 
     override func viewDidLoad() {
         super.viewDidLoad()
