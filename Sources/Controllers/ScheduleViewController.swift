@@ -14,7 +14,7 @@ import RandomKit
 class ScheduleViewController: UITableViewController {
 
     var mapViewController: MapViewController? = nil
-    var serviceRequests = ServiceRequest.generateSamples(amount: 5).sorted(by: { $0.creationDate < $1.creationDate })
+    var serviceRequests = [ServiceRequest]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,7 @@ class ScheduleViewController: UITableViewController {
             let controllers = split.viewControllers
             mapViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
+        generateServiceRequests(amount: 5)
         tabBarController?.tabBar.items?.last?.badgeValue = "3"
     }
 
@@ -68,7 +69,7 @@ class ScheduleViewController: UITableViewController {
         }
     }
 
-    fileprivate func generateServiceRequests() {
+    fileprivate func generateServiceRequests(amount: Int = 15) {
         let newAnnotations = ServiceRequest.generateSamples(amount: 15).sorted(by: {$0.0.dueDate! < $0.1.dueDate!})
         for newAnnotation in newAnnotations {
             newAnnotation.isScheduled = true
