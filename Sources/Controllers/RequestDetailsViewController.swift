@@ -12,7 +12,7 @@ import TBEmptyDataSet
 
 class RequestDetailsViewController: UITableViewController {
 
-    var order: ServiceRequest!
+    var serviceRequest: ServiceRequest!
     
     enum cellTypes: String {
         case kpiHeader
@@ -22,10 +22,8 @@ class RequestDetailsViewController: UITableViewController {
     
     @IBOutlet var kpiHeader: KPIHeaderTableViewCell!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        kpiHeader.device = order.device
+    override func viewDidAppear(_ animated: Bool) {
+        kpiHeader?.device = serviceRequest?.device
     }
     
     @IBAction func dismiss() {

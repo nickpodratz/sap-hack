@@ -31,8 +31,8 @@ extension Company: Sampled {
         ].shuffled(using: &Xoroshiro.threadLocal.pointee)
         let companies = ["Pineapple, Inc.", "Miesens AG", "Microhard, Inc.", "PAS AG", "Googolplex, Inc.", "Mapple, Inc."].shuffled(using: &Xoroshiro.threadLocal.pointee)
         var location: CLLocationCoordinate2D {
-            let latitude = Float.random(within: 52...53, using: &Xoroshiro.threadLocal.pointee)
-            let longitude = Float.random(within: 12...13, using: &Xoroshiro.threadLocal.pointee)
+            let latitude = Float.random(within: 52.4644...52.5644, using: &Xoroshiro.threadLocal.pointee)
+            let longitude = Float.random(within: 13.3627...13.4627, using: &Xoroshiro.threadLocal.pointee)
             return CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
         }
         return (1...amount).map { i in

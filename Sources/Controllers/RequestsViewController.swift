@@ -73,7 +73,7 @@ class RequestsViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "toDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let serviceRequest = serviceRequests[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! RequestDetailsViewController
@@ -109,6 +109,10 @@ class RequestsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetail", sender: self)
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
