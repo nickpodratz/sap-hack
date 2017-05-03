@@ -16,28 +16,17 @@ class RequestDetailsViewController: UITableViewController {
     
     enum cellTypes: String {
         case kpiHeader
-    }
-    var serviceRequests = [ServiceRequest]()
-    
+    }    
     
     @IBOutlet var kpiHeader: KPIHeaderTableViewCell!
     
-    override func viewDidAppear(_ animated: Bool) {
-        kpiHeader?.device = serviceRequest?.device
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        kpiHeader.device = serviceRequest.device
     }
     
     @IBAction func dismiss() {
         dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: - Table View
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return serviceRequests.count
     }
     
 }

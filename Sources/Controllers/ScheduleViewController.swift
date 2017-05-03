@@ -83,8 +83,9 @@ class ScheduleViewController: UITableViewController {
         if segue.identifier == "toDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let request = serviceRequests[indexPath.row]
-                let destinationVC = segue.destination as? RequestDetailsViewController
-                destinationVC?.serviceRequest = request
+                let navigationVC = segue.destination as! UINavigationController
+                let destinationVC = navigationVC.viewControllers.first as! RequestDetailsViewController
+                destinationVC.serviceRequest = request
             }
         }
     }

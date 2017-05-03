@@ -79,6 +79,7 @@ class RequestsViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let serviceRequest = serviceRequests[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! RequestDetailsViewController
+                controller.serviceRequest = serviceRequest
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
