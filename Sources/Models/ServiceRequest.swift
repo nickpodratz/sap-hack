@@ -16,7 +16,7 @@ protocol Sampled {
     static func generateSample() -> T
 }
 
-class Order: NSObject {
+class ServiceRequest: NSObject {
     let title: String?
     let device: Device
     let creationDate: Date
@@ -33,9 +33,9 @@ class Order: NSObject {
     }
 }
 
-extension Order: Sampled {
-    typealias T = Order
-    static func generateSamples(amount: Int) -> [Order] {
+extension ServiceRequest: Sampled {
+    typealias T = ServiceRequest
+    static func generateSamples(amount: Int) -> [ServiceRequest] {
         let titles = [
             "Defect wheel",
             "Scheduled maintenance",
@@ -43,16 +43,16 @@ extension Order: Sampled {
             "Always too loud"
             ].shuffled(using: &Xoroshiro.threadLocal.pointee)
         return (1...amount).map { i in
-            return Order(title: titles[i % titles.count], device: Device.generateSample(), creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample())
+            return ServiceRequest(title: titles[i % titles.count], device: Device.generateSample(), creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample())
         }
     }
     
-    static func generateSample() -> Order {
-        return Order.generateSamples(amount: 1).first!
+    static func generateSample() -> ServiceRequest {
+        return ServiceRequest.generateSamples(amount: 1).first!
     }
 }
 
-extension Order: MKOverlay {
+extension ServiceRequest: MKOverlay {
     public var coordinate: CLLocationCoordinate2D {
         return company.location
     }
