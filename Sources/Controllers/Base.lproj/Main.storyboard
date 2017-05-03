@@ -160,20 +160,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7n-ZQ-8Ad">
-                                                    <rect key="frame" x="142.5" y="8" width="90" height="90"/>
+                                                    <rect key="frame" x="142.5" y="12" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="8SI-aZ-EKQ"/>
                                                         <constraint firstAttribute="height" constant="90" id="O5t-U8-BTm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAP SE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVw-fS-rui">
-                                                    <rect key="frame" x="8" y="144" width="359" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="146" width="359" height="25.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konstantin Yakubovich" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-Lt-xLy">
-                                                    <rect key="frame" x="8" y="112" width="359" height="32"/>
+                                                    <rect key="frame" x="8" y="114" width="359" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="epV-yE-73x"/>
                                                     </constraints>
@@ -187,10 +187,10 @@
                                                 <constraint firstItem="hVw-fS-rui" firstAttribute="leading" secondItem="gbq-NQ-fkq" secondAttribute="leading" constant="8" id="2a2-2z-U03"/>
                                                 <constraint firstAttribute="trailing" secondItem="hVw-fS-rui" secondAttribute="trailing" constant="8" id="3l5-sI-Swn"/>
                                                 <constraint firstItem="Kg0-Lt-xLy" firstAttribute="leading" secondItem="gbq-NQ-fkq" secondAttribute="leading" constant="8" id="NbC-Z4-iqR"/>
-                                                <constraint firstItem="Kg0-Lt-xLy" firstAttribute="top" secondItem="v7n-ZQ-8Ad" secondAttribute="bottom" constant="14" id="OQM-Ia-LKI"/>
+                                                <constraint firstItem="Kg0-Lt-xLy" firstAttribute="top" secondItem="v7n-ZQ-8Ad" secondAttribute="bottom" constant="12" id="OQM-Ia-LKI"/>
                                                 <constraint firstItem="hVw-fS-rui" firstAttribute="top" secondItem="Kg0-Lt-xLy" secondAttribute="bottom" id="WOe-dv-Twl"/>
-                                                <constraint firstItem="v7n-ZQ-8Ad" firstAttribute="top" secondItem="gbq-NQ-fkq" secondAttribute="top" constant="8" id="XNo-eJ-is7"/>
-                                                <constraint firstAttribute="bottom" secondItem="hVw-fS-rui" secondAttribute="bottom" constant="5" id="uQX-P9-YAE"/>
+                                                <constraint firstItem="v7n-ZQ-8Ad" firstAttribute="top" secondItem="gbq-NQ-fkq" secondAttribute="top" constant="12" id="XNo-eJ-is7"/>
+                                                <constraint firstAttribute="bottom" secondItem="hVw-fS-rui" secondAttribute="bottom" constant="4" id="uQX-P9-YAE"/>
                                                 <constraint firstItem="v7n-ZQ-8Ad" firstAttribute="centerX" secondItem="gbq-NQ-fkq" secondAttribute="centerX" id="ucL-CJ-JyS"/>
                                             </constraints>
                                         </tableViewCellContentView>
