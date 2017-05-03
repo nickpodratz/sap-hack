@@ -12,7 +12,7 @@ import TBEmptyDataSet
 
 class ScheduleViewController: UITableViewController {
 
-    var detailViewController: MapViewController? = nil
+    var mapViewController: MapViewController? = nil
     var serviceRequests = [ServiceRequest]()
 
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class ScheduleViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
+            mapViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
     }
 
@@ -50,10 +50,13 @@ class ScheduleViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        serviceRequests.insert(ServiceRequest.generateSample(), at: 0)
+        let newRequest = ServiceRequest.generateSample()
+        newRequest.isScheduled = true
+        serviceRequests.insert(newRequest, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.updateEmptyDataSetIfNeeded()
+        mapViewController?.addAnnotation(request: newRequest, isScheduled: true)
     }
     
     @IBAction func refreshView(_ sender: Any) {
@@ -64,8 +67,14 @@ class ScheduleViewController: UITableViewController {
     }
 
     fileprivate func generateServiceRequests() {
-        self.serviceRequests = ServiceRequest.generateSamples(amount: 15)
+        let newAnnotations = ServiceRequest.generateSamples(amount: 15)
+        for newAnnotation in newAnnotations {
+            newAnnotation.isScheduled = true
+        }
+        self.serviceRequests = newAnnotations
         self.tableView.reloadData()
+        self.mapViewController?.removeAnnotations(annotationIsScheduled: true)
+        self.mapViewController?.populate(requests: self.serviceRequests, scheduled: true)
     }
     
     // MARK: - Segues
@@ -74,9 +83,6 @@ class ScheduleViewController: UITableViewController {
         if segue.identifier == "toDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let request = serviceRequests[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! MapViewController
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -120,6 +126,7 @@ class ScheduleViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            mapViewController?.removeAnnotation(request: serviceRequests[indexPath.row])
             serviceRequests.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {

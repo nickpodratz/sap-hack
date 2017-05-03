@@ -21,15 +21,17 @@ class ServiceRequest: NSObject {
     let device: Device
     let creationDate: Date
     let company: Company
+    var isScheduled: Bool
     
     var dueDate: Date? = nil
     var events = [Event]()
     
-    public init(title: String, device: Device, creationDate: Date = Date(), company: Company) {
+    public init(title: String, device: Device, creationDate: Date = Date(), company: Company, isScheduled: Bool = false) {
         self.title = title
         self.device = device
         self.creationDate = creationDate
         self.company = company
+        self.isScheduled = isScheduled
     }
 }
 

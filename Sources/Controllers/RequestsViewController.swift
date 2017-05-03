@@ -12,7 +12,7 @@ import SAPFiori
 
 class RequestsViewController: UITableViewController {
 
-    var detailViewController: MapViewController? = nil
+    var mapViewController: MapViewController? = nil
     var serviceRequests = [ServiceRequest]()
 
 
@@ -33,7 +33,7 @@ class RequestsViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
+            mapViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
     }
 
@@ -48,10 +48,12 @@ class RequestsViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        serviceRequests.insert(ServiceRequest.generateSample(), at: 0)
+        let newRequest = ServiceRequest.generateSample()
+        serviceRequests.insert(newRequest, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.updateEmptyDataSetIfNeeded()
+        mapViewController?.addAnnotation(request: newRequest, isScheduled: false)
     }
     
     @IBAction func refreshView(_ sender: Any) {
@@ -64,6 +66,8 @@ class RequestsViewController: UITableViewController {
     fileprivate func generateServiceRequests() {
         self.serviceRequests = ServiceRequest.generateSamples(amount: 15)
         self.tableView.reloadData()
+        self.mapViewController?.removeAnnotations(annotationIsScheduled: false)
+        self.mapViewController?.populate(requests: self.serviceRequests, scheduled: false)
     }
 
     // MARK: - Segues
@@ -109,6 +113,7 @@ class RequestsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            mapViewController?.removeAnnotation(request: serviceRequests[indexPath.row])
             serviceRequests.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
