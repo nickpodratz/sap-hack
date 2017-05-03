@@ -44,7 +44,7 @@ extension ServiceRequest: Sampled {
             "HELP plz 😵",
             "Always too loud"
             ].shuffled(using: &Xoroshiro.threadLocal.pointee)
-        return (1...amount).map { i in
+        return (0..<amount).map { i in
             return ServiceRequest(title: titles[i % titles.count], device: Device.generateSample(), creationDate: Date.random(using: &Xoroshiro.threadLocal.pointee), company: Company.generateSample())
         }
     }
