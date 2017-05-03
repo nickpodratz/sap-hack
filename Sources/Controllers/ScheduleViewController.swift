@@ -37,6 +37,7 @@ class ScheduleViewController: UITableViewController {
             let controllers = split.viewControllers
             mapViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
+        tabBarController?.tabBar.items?.last?.badgeValue = "3"
     }
 
     override func viewWillAppear(_ animated: Bool) {

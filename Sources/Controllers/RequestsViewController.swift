@@ -14,7 +14,11 @@ import Haneke
 class RequestsViewController: UITableViewController {
 
     var mapViewController: MapViewController? = nil
-    var serviceRequests = [ServiceRequest]()
+    var serviceRequests = ServiceRequest.generateSamples(amount: 3) {
+        didSet {
+            tabBarController?.tabBar.items?.last?.badgeValue = serviceRequests.count == 0 ? nil : "\(serviceRequests.count)"
+        }
+    }
 
 
     override func viewDidLoad() {
@@ -38,6 +42,7 @@ class RequestsViewController: UITableViewController {
             let controllers = split.viewControllers
             mapViewController = (controllers.last as? UINavigationController)?.topViewController as? MapViewController
         }
+        mapViewController?.populate(requests: self.serviceRequests, scheduled: false)
     }
 
     override func viewWillAppear(_ animated: Bool) {
