@@ -249,7 +249,6 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
-                                    <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" trigger="accessoryAction" modalPresentationStyle="formSheet" id="zRg-vA-EGD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -267,6 +266,9 @@
                             <action selector="refreshView:" destination="7bK-jq-Zjz" eventType="valueChanged" id="zT9-Dp-3NF"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="0XN-xS-O12"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,9 +333,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" trigger="accessoryAction" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="izi-dx-RYs"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -350,6 +349,9 @@
                             <action selector="refreshView:" destination="kAA-bG-IC8" eventType="valueChanged" id="Etc-qu-h4H"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <segue destination="VD7-1P-ON7" kind="presentation" identifier="toDetail" modalPresentationStyle="pageSheet" modalTransitionStyle="coverVertical" id="XTR-8F-4l7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33o-Bk-HWn" sceneMemberID="firstResponder"/>
             </objects>
@@ -406,6 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guX-Ft-xXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-940" y="497"/>
         </scene>
     </scenes>
     <resources>
@@ -413,7 +416,7 @@
         <image name="Schedule" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="izi-dx-RYs"/>
+        <segue reference="XTR-8F-4l7"/>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>
