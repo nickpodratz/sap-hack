@@ -45,7 +45,7 @@ extension RequestDetailsViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDa
     }
     
     func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
-        return NSAttributedString(string: "… weird, isn't it?")
+        return NSAttributedString(string: "¯\\_(ツ)_/¯")
     }
     
     func emptyDataSetWillAppear(in scrollView: UIScrollView) {

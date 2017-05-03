@@ -88,14 +88,15 @@ class ScheduleViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: FUITimelineCell.reuseIdentifier, for: indexPath)
         guard let timelineCell = cell as? FUITimelineCell else { return cell }
         //        let object = objects[indexPath.row]
-        timelineCell.timelineWidth = CGFloat(95.0)
+        timelineCell.timelineWidth = CGFloat(70.0)
         timelineCell.headlineText = "Headline"// ticket.title
         timelineCell.subheadlineText = "id: 1234" //ticket.productid
         timelineCell.nodeImage = FUITimelineNode.open
         timelineCell.eventText =  "10:00 AM"
-        timelineCell.eventImage =  UIImage() // TODO: Replace with your image
+        timelineCell.eventImage =  #imageLiteral(resourceName: "Pin_2") // TODO: Replace with your image
+        timelineCell.eventImageView.tintColor = UIColor.preferredFioriColor(forStyle: .tintColorDark)
         timelineCell.statusImage = UIImage() // TODO: Replace with your image
-        timelineCell.subStatusText =  "rainy"
+        timelineCell.subStatusText =  "Rainy"
         timelineCell.attributeText =  "1h 30 min"
         timelineCell.subAttributeText =  "8 min (2.4 min)"
         return timelineCell
@@ -129,7 +130,7 @@ extension ScheduleViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSour
     }
     
     func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
-        return NSAttributedString(string: "… then take a break!")
+        return NSAttributedString(string: "¯\\_(ツ)_/¯")
     }
     
     func emptyDataSetWillAppear(in scrollView: UIScrollView) {

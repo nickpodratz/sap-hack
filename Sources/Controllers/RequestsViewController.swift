@@ -91,7 +91,10 @@ class RequestsViewController: UITableViewController {
         tableViewCell.subheadlineText = "Subheadline"
         tableViewCell.descriptionText = "Description"
         tableViewCell.footnoteText = "Footnote"
-        tableViewCell.imageView?.image = UIImage()
+//        tableViewCell.substatusImage = #imageLiteral(resourceName: "Warning")
+        tableViewCell.substatusImage = #imageLiteral(resourceName: "Alert")
+//        tableViewCell.substatusImageView.tintColor = UIColor.preferredFioriColor(forStyle: .critical)
+        tableViewCell.substatusImageView.tintColor = UIColor.preferredFioriColor(forStyle: .negative)
         return cell
     }
 
@@ -121,7 +124,7 @@ extension RequestsViewController: TBEmptyDataSetDelegate, TBEmptyDataSetDataSour
     }
     
     func descriptionForEmptyDataSet(in scrollView: UIScrollView) -> NSAttributedString? {
-        return NSAttributedString(string: "… but that's just a matter of time.")
+        return NSAttributedString(string: "¯\\_(ツ)_/¯")
     }
 
     func emptyDataSetWillAppear(in scrollView: UIScrollView) {
