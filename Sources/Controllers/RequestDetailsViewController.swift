@@ -12,28 +12,23 @@ import TBEmptyDataSet
 
 class RequestDetailsViewController: UITableViewController {
 
-    var objects = [Any]()
+    var order: Order!
     
+    enum cellTypes: String {
+        case kpiHeader
+    }
+    
+    
+    @IBOutlet var kpiHeader: KPIHeaderTableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.emptyDataSetDataSource = self
-        tableView.emptyDataSetDelegate = self
+        kpiHeader.device = order.device
     }
     
     @IBAction func dismiss() {
         dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: - Table View
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
     }
     
 }
