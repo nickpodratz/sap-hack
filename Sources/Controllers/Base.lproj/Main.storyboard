@@ -402,7 +402,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="jLA-pu-3ft">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="k7K-aW-lwB">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="k7K-aW-lwB">
                             <connections>
                                 <action selector="dismiss:" destination="iO3-1C-9ae" id="sH2-s5-hK9"/>
                             </connections>
