@@ -107,21 +107,12 @@ class RequestsViewController: UITableViewController {
         guard let tableViewCell = cell as? FUIObjectTableViewCell else { return cell }
 
         let serviceRequest = serviceRequests[indexPath.row]
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        if let url = URL(string: serviceRequest.company.image) {
-            appDelegate?.cache.fetch(URL: url).onSuccess { image in
-                if let data = NSData(contentsOf: url) {
-                    if let image = UIImage(data: data as Data) {
-                        tableViewCell.detailImage = image
-                        tableViewCell.detailImageView.layer.cornerRadius = tableViewCell.detailImageView.bounds.width/2
-                    }
-                }
-            }
-        }
+        tableViewCell.detailImage = serviceRequest.company.image
+        tableViewCell.detailImageView.layer.cornerRadius = tableViewCell.detailImageView.bounds.width/2
+        tableViewCell.detailImageView.isCircular = true
         tableViewCell.headlineText = serviceRequest.title
         tableViewCell.subheadlineText = serviceRequest.subtitle
         tableViewCell.footnoteText = "\(serviceRequest.company.name), \(serviceRequest.device.name)"
-        tableViewCell.imageView?.image = UIImage()
         return cell
     }
 
